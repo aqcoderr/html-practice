@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA LUXE — Furniture for a Considered Life</title>
+<meta name="description" content="AURA LUXE — premium furniture crafted from real materials. Sofas, chairs, tables, beds and storage for a considered home.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ===================== RESET & TOKENS ===================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --primary:#1F3A5F;
+  --primary-dark:#152A46;
+  --primary-light:#2C4D7A;
+  --accent:#B08D57;
+  --accent-light:#C7A878;
+  --accent-dark:#8F7043;
+  --bg:#F8F8F8;
+  --card:#FFFFFF;
+  --text:#1A1A1A;
+  --text-secondary:#6B7280;
+  --border:#E5E7EB;
+  --radius-sm:8px;
+  --radius-md:16px;
+  --radius-lg:28px;
+  --shadow-sm:0 2px 10px rgba(31,58,95,.07);
+  --shadow-md:0 10px 30px rgba(31,58,95,.10);
+  --shadow-lg:0 24px 70px rgba(31,58,95,.18);
+  --ease:cubic-bezier(.4,0,.2,1);
+  --t-fast:200ms var(--ease);
+  --t-med:320ms var(--ease);
+  --t-slow:500ms var(--ease);
+  --maxw:1280px;
+  color-scheme: light;
+}
+[data-theme="dark"]{
+  --bg:#12161d;
+  --card:#1a212b;
+  --text:#F1F1F1;
+  --text-secondary:#98a2b3;
+  --border:#2a3140;
+  --shadow-sm:0 2px 10px rgba(0,0,0,.35);
+  --shadow-md:0 10px 30px rgba(0,0,0,.4);
+  --shadow-lg:0 24px 70px rgba(0,0,0,.55);
+  color-scheme: dark;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+  transition:background var(--t-med), color var(--t-med);
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+input,textarea,select{font-family:inherit;}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+section{padding:110px 0;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent-dark);font-weight:600;margin-bottom:18px;
+}
+[data-theme="dark"] .eyebrow{color:var(--accent-light);}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--accent);display:inline-block;}
+.section-head{max-width:640px;margin-bottom:56px;}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+h1,h2,h3,h4{font-weight:600;line-height:1.15;letter-spacing:-.01em;}
+.section-head h2{font-size:clamp(2rem,3.4vw,2.7rem);font-weight:600;margin-bottom:14px;}
+.section-head p{color:var(--text-secondary);font-size:1.02rem;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 32px;border-radius:100px;font-size:.92rem;font-weight:600;
+  letter-spacing:.02em;transition:all var(--t-fast);white-space:nowrap;
+}
+.btn-primary{background:var(--primary);color:#fff;}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:var(--shadow-md);}
+.btn-accent{background:var(--accent);color:#fff;}
+.btn-accent:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:var(--shadow-md);}
+.btn-outline{border:1.5px solid var(--primary);color:var(--primary);}
+[data-theme="dark"] .btn-outline{border-color:var(--accent-light);color:var(--accent-light);}
+.btn-outline:hover{background:var(--primary);color:#fff;}
+.btn-ghost{color:var(--primary);font-weight:600;font-size:.9rem;}
+[data-theme="dark"] .btn-ghost{color:var(--accent-light);}
+.btn-ghost i{transition:transform var(--t-fast);}
+.btn-ghost:hover i{transform:translateX(4px);}
+.btn-sm{padding:9px 20px;font-size:.82rem;}
+.pill{padding:6px 16px;border-radius:100px;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
+.pill-new{background:rgba(31,58,95,.1);color:var(--primary);}
+[data-theme="dark"] .pill-new{background:rgba(44,77,122,.35);color:#cfe0ff;}
+.pill-sale{background:rgba(176,141,87,.15);color:var(--accent-dark);}
+[data-theme="dark"] .pill-sale{background:rgba(176,141,87,.25);color:var(--accent-light);}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(.94);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+.reveal-scale.visible{opacity:1;transform:scale(1);}
+
+/* ===================== LOADING SCREEN ===================== */
+#loading-screen{
+  position:fixed;inset:0;z-index:9999;background:var(--primary);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;
+  transition:opacity .6s var(--ease), visibility .6s var(--ease);
+}
+#loading-screen.hide{opacity:0;visibility:hidden;pointer-events:none;}
+.loader-mark{font-family:'Poppins',sans-serif;font-size:1.6rem;letter-spacing:.3em;color:#fff;font-weight:600;}
+.loader-bar{width:180px;height:2px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden;}
+.loader-bar span{display:block;height:100%;width:0%;background:var(--accent-light);animation:loaderFill 1.4s var(--ease) forwards;}
+@keyframes loaderFill{to{width:100%;}}
+
+/* ===================== CUSTOM CURSOR (desktop only) ===================== */
+.cursor-dot{
+  position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;
+  background:var(--accent);pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);transition:width .25s var(--ease),height .25s var(--ease),background .25s var(--ease);
+  mix-blend-mode:difference;
+}
+.cursor-dot.grow{width:38px;height:38px;background:var(--accent-light);}
+@media (pointer:coarse){.cursor-dot{display:none;}}
+
+/* ===================== NAVBAR ===================== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  background:rgba(248,248,248,.72);backdrop-filter:blur(16px) saturate(160%);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);
+  border-bottom:1px solid rgba(229,231,235,.6);
+  transition:background var(--t-med), border-color var(--t-med), padding var(--t-med);
+}
+[data-theme="dark"] header{background:rgba(18,22,29,.72);border-bottom-color:rgba(42,49,64,.6);}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;max-width:var(--maxw);margin:0 auto;transition:padding var(--t-med);}
+header.scrolled .nav-wrap{padding:13px 32px;}
+.logo{font-size:1.4rem;font-weight:700;letter-spacing:.14em;color:var(--primary);}
+[data-theme="dark"] .logo{color:#fff;}
+.logo span{color:var(--accent);}
+.nav-actions{display:flex;align-items:center;gap:8px;}
+.nav-icon-btn{
+  position:relative;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:var(--text);font-size:1.02rem;transition:background var(--t-fast),color var(--t-fast);
+}
+.nav-icon-btn:hover{background:rgba(31,58,95,.08);color:var(--primary);}
+[data-theme="dark"] .nav-icon-btn:hover{background:rgba(255,255,255,.08);color:var(--accent-light);}
+.badge-count{
+  position:absolute;top:0px;right:0px;background:var(--accent);color:#fff;font-size:.62rem;font-weight:700;
+  width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+}
+.lang-switch{position:relative;}
+.lang-btn{
+  display:flex;align-items:center;gap:6px;padding:9px 14px;border-radius:100px;font-size:.82rem;font-weight:600;
+  border:1px solid var(--border);color:var(--text);transition:border-color var(--t-fast);
+}
+.lang-btn:hover{border-color:var(--accent);}
+.lang-menu{
+  position:absolute;top:calc(100% + 10px);right:0;background:var(--card);border-radius:var(--radius-sm);
+  box-shadow:var(--shadow-lg);min-width:150px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:all var(--t-fast);border:1px solid var(--border);
+}
+.lang-switch.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.lang-menu button{display:flex;width:100%;align-items:center;gap:10px;padding:12px 16px;font-size:.85rem;transition:background var(--t-fast);}
+.lang-menu button:hover{background:var(--bg);}
+.lang-menu button.active{color:var(--accent-dark);font-weight:600;}
+.contact-nav-btn{margin-left:6px;}
+.theme-toggle .fa-sun{display:none;}
+[data-theme="dark"] .theme-toggle .fa-sun{display:inline;}
+[data-theme="dark"] .theme-toggle .fa-moon{display:none;}
+.mobile-toggle{display:none;}
+
+@media(max-width:860px){
+  .nav-wrap{padding:16px 20px;}
+  .contact-nav-btn span, .lang-btn span.lang-label{display:none;}
+  section{padding:76px 0;}
+  .container{padding:0 20px;}
+}
+
+/* ===================== HERO ===================== */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;padding:150px 0 90px;overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dark);font-weight:600;margin-bottom:26px;}
+[data-theme="dark"] .hero-eyebrow{color:var(--accent-light);}
+.hero h1{font-size:clamp(2.6rem,5vw,4.2rem);color:var(--primary);margin-bottom:24px;}
+[data-theme="dark"] .hero h1{color:#fff;}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:500;}
+.hero p{font-size:1.08rem;color:var(--text-secondary);max-width:480px;margin-bottom:38px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
+.hero-materials{display:flex;gap:22px;align-items:center;}
+.material-swatch{display:flex;align-items:center;gap:10px;}
+.swatch-chip{width:30px;height:30px;border-radius:9px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);}
+.material-swatch span{font-size:.76rem;color:var(--text-secondary);font-weight:500;}
+.hero-visual{position:relative;height:560px;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s var(--ease);}
+.hero-slide.active{opacity:1;}
+.hero-slide img{width:100%;height:100%;object-fit:cover;}
+.hero-slide-caption{
+  position:absolute;left:24px;bottom:24px;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);
+  padding:14px 20px;border-radius:var(--radius-sm);box-shadow:var(--shadow-md);
+}
+[data-theme="dark"] .hero-slide-caption{background:rgba(26,33,43,.85);}
+.hero-slide-caption .name{font-weight:600;font-size:.92rem;}
+.hero-slide-caption .price{color:var(--accent-dark);font-weight:700;font-size:.9rem;}
+[data-theme="dark"] .hero-slide-caption .price{color:var(--accent-light);}
+.hero-dots{position:absolute;bottom:24px;right:24px;display:flex;gap:8px;z-index:3;}
+.hero-dots button{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.6);transition:all var(--t-fast);}
+.hero-dots button.active{width:22px;border-radius:5px;background:#fff;}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{height:380px;order:-1;}
+  .hero{padding:120px 0 60px;}
+}
+
+/* ===================== FEATURED COLLECTIONS ===================== */
+.collections-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:20px;height:560px;}
+.collection-card{position:relative;border-radius:var(--radius-md);overflow:hidden;cursor:pointer;}
+.collection-card:nth-child(1){grid-row:1/3;}
+.collection-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);}
+.collection-card:hover img{transform:scale(1.08);}
+.collection-overlay{
+  position:absolute;inset:0;background:linear-gradient(0deg,rgba(21,42,70,.82) 0%,rgba(21,42,70,.1) 55%,transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:26px;color:#fff;
+}
+.collection-overlay h3{font-size:1.3rem;margin-bottom:6px;}
+.collection-overlay span{font-size:.8rem;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:6px;}
+@media(max-width:860px){
+  .collections-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,220px);height:auto;}
+  .collection-card:nth-child(1){grid-row:auto;grid-column:1/3;}
+}
+
+/* ===================== CATEGORIES ===================== */
+.cat-scroller{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;}
+.cat-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius-md);padding:30px 20px;
+  text-align:center;transition:all var(--t-fast);
+}
+.cat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent;}
+.cat-card .cat-icon{
+  width:64px;height:64px;border-radius:50%;background:rgba(31,58,95,.07);display:flex;align-items:center;
+  justify-content:center;margin:0 auto 18px;font-size:1.4rem;color:var(--primary);transition:all var(--t-fast);
+}
+[data-theme="dark"] .cat-card .cat-icon{background:rgba(255,255,255,.06);}
+.cat-card:hover .cat-icon{background:var(--accent);color:#fff;}
+.cat-card h4{font-size:1rem;margin-bottom:6px;}
+.cat-card p{font-size:.8rem;color:var(--text-secondary);}
+@media(max-width:900px){.cat-scroller{grid-template-columns:repeat(2,1fr);}}
+
+/* ===================== PRODUCTS ===================== */
+.products-toolbar{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-bottom:40px;}
+.filter-chips{display:flex;gap:10px;flex-wrap:wrap;}
+.filter-chip{
+  padding:10px 20px;border-radius:100px;border:1px solid var(--border);font-size:.84rem;font-weight:500;
+  transition:all var(--t-fast);
+}
+.filter-chip:hover{border-color:var(--accent);}
+.filter-chip.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+.tool-right{display:flex;gap:12px;align-items:center;}
+.search-box{position:relative;}
+.search-box input{
+  padding:11px 16px 11px 42px;border-radius:100px;border:1px solid var(--border);background:var(--card);
+  color:var(--text);font-size:.86rem;width:230px;transition:border-color var(--t-fast),width var(--t-fast);
+}
+.search-box input:focus{outline:none;border-color:var(--accent);width:270px;}
+.search-box i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-secondary);font-size:.85rem;}
+.sort-select{
+  padding:11px 18px;border-radius:100px;border:1px solid var(--border);background:var(--card);color:var(--text);
+  font-size:.84rem;
+}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+.product-card{
+  background:var(--card);border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border);
+  transition:all var(--t-fast);display:flex;flex-direction:column;position:relative;
+}
+.product-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);border-color:transparent;}
+.product-media{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--border);}
+.product-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);cursor:pointer;}
+.product-card:hover .product-media img{transform:scale(1.06);}
+.product-badges{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px;}
+.product-quick{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateX(8px);transition:all var(--t-fast);}
+.product-card:hover .product-quick{opacity:1;transform:translateX(0);}
+.qbtn{
+  width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;
+  color:var(--primary);font-size:.88rem;box-shadow:var(--shadow-sm);transition:all var(--t-fast);
+}
+.qbtn:hover{background:var(--accent);color:#fff;}
+.qbtn.active{background:var(--accent);color:#fff;}
+.product-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.product-cat{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);}
+.product-name{font-size:1.02rem;font-weight:600;cursor:pointer;}
+.product-rating{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text-secondary);}
+.product-rating .stars{color:var(--accent);}
+.product-price-row{display:flex;align-items:center;gap:10px;margin-top:4px;}
+.price-now{font-size:1.12rem;font-weight:700;color:var(--primary);}
+[data-theme="dark"] .price-now{color:#fff;}
+.price-old{font-size:.86rem;color:var(--text-secondary);text-decoration:line-through;}
+.add-cart-btn{
+  margin-top:12px;width:100%;padding:12px;border-radius:100px;background:var(--bg);border:1.5px solid var(--primary);
+  color:var(--primary);font-weight:600;font-size:.85rem;transition:all var(--t-fast);display:flex;align-items:center;
+  justify-content:center;gap:8px;
+}
+[data-theme="dark"] .add-cart-btn{border-color:var(--accent-light);color:var(--accent-light);}
+.add-cart-btn:hover{background:var(--primary);color:#fff;}
+[data-theme="dark"] .add-cart-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+.compare-check{display:flex;align-items:center;gap:6px;font-size:.74rem;color:var(--text-secondary);margin-top:2px;}
+.compare-check input{accent-color:var(--accent);}
+.load-more-wrap{text-align:center;margin-top:48px;}
+.no-results{grid-column:1/-1;text-align:center;padding:60px 0;color:var(--text-secondary);}
+@media(max-width:1100px){.products-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:760px){.products-grid{grid-template-columns:repeat(2,1fr);}.search-box input{width:150px;}}
+@media(max-width:480px){.products-grid{grid-template-columns:1fr 1fr;gap:14px;}.product-body{padding:12px;}}
+
+/* ===================== GALLERY ===================== */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:16px;}
+.gallery-item{position:relative;border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;}
+.gallery-item:nth-child(3n+1){grid-row:span 2;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+.gallery-item:hover img{transform:scale(1.1);}
+.gallery-item::after{content:'\f065';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;background:rgba(21,42,70,0);
+  opacity:0;transition:all var(--t-fast);}
+.gallery-item:hover::after{opacity:1;background:rgba(21,42,70,.35);}
+@media(max-width:860px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ===================== WHY CHOOSE US ===================== */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+.why-card{padding:34px 26px;border-radius:var(--radius-md);background:var(--card);border:1px solid var(--border);transition:all var(--t-fast);}
+.why-card:hover{border-color:var(--accent);transform:translateY(-4px);}
+.why-icon{width:52px;height:52px;border-radius:14px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:20px;}
+.why-card h4{font-size:1.05rem;margin-bottom:10px;}
+.why-card p{font-size:.88rem;color:var(--text-secondary);}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr;}}
+
+/* ===================== STATS ===================== */
+.stats-section{background:var(--primary);color:#fff;border-radius:var(--radius-lg);margin:0 32px;padding:70px 40px;max-width:calc(var(--maxw) - 64px);margin-left:auto;margin-right:auto;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;}
+.stat-num{font-size:clamp(2.2rem,4vw,3.2rem);font-weight:700;color:var(--accent-light);}
+.stat-label{font-size:.86rem;color:rgba(255,255,255,.75);margin-top:8px;letter-spacing:.03em;}
+@media(max-width:760px){.stats-grid{grid-template-columns:1fr 1fr;gap:36px;}.stats-section{margin:0 16px;padding:50px 24px;}}
+
+/* ===================== TESTIMONIALS ===================== */
+.testi-wrap{position:relative;max-width:760px;margin:0 auto;text-align:center;}
+.testi-slide{display:none;}
+.testi-slide.active{display:block;animation:fadeIn .6s var(--ease);}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.testi-stars{color:var(--accent);font-size:1rem;margin-bottom:20px;}
+.testi-quote{font-size:1.3rem;font-weight:400;font-style:italic;line-height:1.5;margin-bottom:26px;}
+.testi-person{display:flex;align-items:center;justify-content:center;gap:14px;}
+.testi-person img{width:52px;height:52px;border-radius:50%;object-fit:cover;}
+.testi-person .name{font-weight:600;font-size:.92rem;}
+.testi-person .role{font-size:.78rem;color:var(--text-secondary);}
+.testi-nav{display:flex;justify-content:center;gap:14px;margin-top:36px;}
+.testi-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all var(--t-fast);}
+.testi-nav button:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+
+/* ===================== PROMOTIONS ===================== */
+.promo-banner{
+  background:linear-gradient(120deg,var(--primary) 0%,var(--primary-dark) 100%);border-radius:var(--radius-lg);
+  padding:56px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:30px;color:#fff;
+  position:relative;overflow:hidden;
+}
+.promo-banner::before{content:'';position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(176,141,87,.18);top:-160px;right:-80px;}
+.promo-text h3{font-size:1.9rem;margin-bottom:10px;position:relative;}
+.promo-text p{color:rgba(255,255,255,.8);position:relative;max-width:420px;}
+.promo-code{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);padding:10px 18px;border-radius:100px;margin-top:18px;position:relative;}
+.promo-code strong{letter-spacing:.1em;color:var(--accent-light);}
+.promo-timer{display:flex;gap:14px;position:relative;}
+.promo-timer .t-box{background:rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:16px 18px;text-align:center;min-width:70px;}
+.promo-timer .t-num{font-size:1.5rem;font-weight:700;}
+.promo-timer .t-label{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);}
+@media(max-width:760px){.promo-banner{padding:36px 26px;}}
+
+/* ===================== ABOUT ===================== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.about-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;height:460px;box-shadow:var(--shadow-lg);}
+.about-media img{width:100%;height:100%;object-fit:cover;}
+.about-badge{
+  position:absolute;bottom:-1px;right:-1px;background:var(--accent);color:#fff;padding:26px 30px;border-radius:var(--radius-lg) 0 0 0;
+  text-align:center;
+}
+.about-badge .num{font-size:1.8rem;font-weight:700;}
+.about-badge .lbl{font-size:.72rem;letter-spacing:.04em;}
+.about-copy p{color:var(--text-secondary);margin-bottom:18px;}
+.about-list{margin-top:26px;display:flex;flex-direction:column;gap:14px;}
+.about-list li{display:flex;align-items:flex-start;gap:12px;font-size:.92rem;}
+.about-list i{color:var(--accent);margin-top:3px;}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;}.about-media{height:320px;}}
+
+/* ===================== FAQ ===================== */
+.faq-list{max-width:800px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;padding:24px 4px;font-size:1.02rem;
+  font-weight:500;text-align:left;transition:color var(--t-fast);
+}
+.faq-q:hover{color:var(--accent-dark);}
+[data-theme="dark"] .faq-q:hover{color:var(--accent-light);}
+.faq-q i{transition:transform var(--t-fast);color:var(--accent);flex-shrink:0;margin-left:16px;}
+.faq-item.open .faq-q i{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height var(--t-med);}
+.faq-a p{padding:0 4px 24px;color:var(--text-secondary);font-size:.92rem;max-width:680px;}
+
+/* ===================== CONTACT ===================== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+.contact-info-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px 20px;display:flex;gap:16px;align-items:center;margin-bottom:16px;}
+.contact-info-card .ic{width:46px;height:46px;border-radius:50%;background:rgba(31,58,95,.08);display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0;}
+[data-theme="dark"] .contact-info-card .ic{background:rgba(255,255,255,.06);}
+.contact-info-card h5{font-size:.92rem;margin-bottom:2px;}
+.contact-info-card p{font-size:.85rem;color:var(--text-secondary);}
+.map-embed{border-radius:var(--radius-md);overflow:hidden;margin-top:20px;height:220px;border:1px solid var(--border);}
+.map-embed iframe{width:100%;height:100%;border:0;}
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-size:.84rem;font-weight:600;margin-bottom:8px;}
+.form-group input,.form-group textarea{
+  width:100%;padding:14px 16px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--card);
+  color:var(--text);font-size:.92rem;transition:border-color var(--t-fast);
+}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--accent);}
+.form-group.error input,.form-group.error textarea{border-color:#c0392b;}
+.form-error-msg{color:#c0392b;font-size:.76rem;margin-top:6px;display:none;}
+.form-group.error .form-error-msg{display:block;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
+
+/* ===================== FOOTER ===================== */
+footer{background:var(--primary-dark);color:rgba(255,255,255,.85);padding-top:90px;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:50px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.12);}
+.footer-logo{font-size:1.4rem;font-weight:700;letter-spacing:.14em;color:#fff;margin-bottom:18px;}
+.footer-logo span{color:var(--accent-light);}
+.footer-grid p{font-size:.88rem;color:rgba(255,255,255,.6);max-width:280px;margin-bottom:22px;}
+.footer-social{display:flex;gap:10px;}
+.footer-social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:all var(--t-fast);}
+.footer-social a:hover{background:var(--accent);transform:translateY(-3px);}
+.footer-col h5{color:#fff;font-size:.9rem;margin-bottom:20px;letter-spacing:.04em;}
+.footer-col ul li{margin-bottom:12px;}
+.footer-col ul li a{font-size:.86rem;color:rgba(255,255,255,.65);transition:color var(--t-fast);}
+.footer-col ul li a:hover{color:var(--accent-light);}
+.newsletter-form{display:flex;gap:0;margin-top:6px;border-radius:100px;overflow:hidden;background:rgba(255,255,255,.08);padding:5px;}
+.newsletter-form input{flex:1;background:transparent;border:none;padding:11px 16px;color:#fff;font-size:.85rem;}
+.newsletter-form input::placeholder{color:rgba(255,255,255,.5);}
+.newsletter-form input:focus{outline:none;}
+.newsletter-form button{background:var(--accent);color:#fff;padding:11px 20px;border-radius:100px;font-size:.85rem;font-weight:600;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:26px 0;font-size:.8rem;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:10px;}
+.footer-bottom a{color:rgba(255,255,255,.5);}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr;}}
+
+/* ===================== FLOATING ELEMENTS ===================== */
+.floating-social{position:fixed;left:22px;bottom:22px;z-index:500;display:flex;flex-direction:column;gap:10px;}
+.floating-social a{
+  width:44px;height:44px;border-radius:50%;background:var(--card);box-shadow:var(--shadow-md);display:flex;
+  align-items:center;justify-content:center;color:var(--primary);transition:all var(--t-fast);border:1px solid var(--border);
+}
+.floating-social a:hover{background:var(--accent);color:#fff;transform:translateY(-3px);}
+#back-to-top{
+  position:fixed;right:22px;bottom:22px;z-index:500;width:48px;height:48px;border-radius:50%;background:var(--primary);
+  color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);opacity:0;visibility:hidden;
+  transform:translateY(10px);transition:all var(--t-fast);
+}
+#back-to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+#back-to-top:hover{background:var(--accent);}
+
+/* ===================== COOKIE CONSENT ===================== */
+#cookie-banner{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(140%);width:min(560px,92vw);
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-lg);
+  padding:22px 26px;z-index:800;display:flex;align-items:center;gap:20px;flex-wrap:wrap;transition:transform var(--t-slow);
+}
+#cookie-banner.show{transform:translateX(-50%) translateY(0);}
+#cookie-banner p{font-size:.85rem;color:var(--text-secondary);flex:1;min-width:200px;}
+#cookie-banner .cookie-actions{display:flex;gap:10px;}
+
+/* ===================== TOASTS ===================== */
+#toast-container{position:fixed;top:100px;right:22px;z-index:1200;display:flex;flex-direction:column;gap:10px;}
+.toast{
+  display:flex;align-items:center;gap:12px;background:var(--card);color:var(--text);padding:15px 20px;border-radius:var(--radius-sm);
+  box-shadow:var(--shadow-lg);border-left:4px solid var(--accent);min-width:260px;max-width:340px;
+  animation:toastIn .35s var(--ease);
+}
+.toast.removing{animation:toastOut .35s var(--ease) forwards;}
+@keyframes toastIn{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
+@keyframes toastOut{to{opacity:0;transform:translateX(40px);}}
+.toast i{color:var(--accent);font-size:1.1rem;}
+.toast.error{border-left-color:#c0392b;}
+.toast.error i{color:#c0392b;}
+.toast-msg{font-size:.86rem;font-weight:500;}
+
+/* ===================== DRAWERS (CART / WISHLIST) ===================== */
+.overlay-bg{position:fixed;inset:0;background:rgba(21,42,70,.4);backdrop-filter:blur(2px);z-index:950;opacity:0;visibility:hidden;transition:all var(--t-med);}
+.overlay-bg.show{opacity:1;visibility:visible;}
+.drawer{
+  position:fixed;top:0;right:0;height:100%;width:min(430px,92vw);background:var(--card);z-index:960;
+  box-shadow:var(--shadow-lg);transform:translateX(100%);transition:transform var(--t-med);display:flex;flex-direction:column;
+}
+.drawer.show{transform:translateX(0);}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:26px;border-bottom:1px solid var(--border);}
+.drawer-head h3{font-size:1.2rem;}
+.drawer-close{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background var(--t-fast);}
+.drawer-close:hover{background:var(--bg);}
+.drawer-body{flex:1;overflow-y:auto;padding:22px 26px;}
+.drawer-empty{text-align:center;padding:60px 20px;color:var(--text-secondary);}
+.drawer-empty i{font-size:2.4rem;color:var(--border);margin-bottom:16px;}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}
+.cart-item img{width:76px;height:76px;border-radius:var(--radius-sm);object-fit:cover;flex-shrink:0;}
+.cart-item-info{flex:1;}
+.cart-item-info h5{font-size:.9rem;margin-bottom:4px;}
+.cart-item-info .mat{font-size:.74rem;color:var(--text-secondary);margin-bottom:8px;}
+.qty-control{display:flex;align-items:center;gap:10px;}
+.qty-control button{width:26px;height:26px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;}
+.qty-control button:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+.qty-control span{font-size:.86rem;font-weight:600;min-width:16px;text-align:center;}
+.cart-item-right{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;}
+.cart-item-right .price{font-weight:700;font-size:.92rem;}
+.remove-item{color:var(--text-secondary);font-size:.85rem;transition:color var(--t-fast);}
+.remove-item:hover{color:#c0392b;}
+.drawer-foot{padding:22px 26px;border-top:1px solid var(--border);}
+.sum-row{display:flex;justify-content:space-between;font-size:.86rem;color:var(--text-secondary);margin-bottom:8px;}
+.sum-row.total{font-size:1.05rem;font-weight:700;color:var(--text);margin-top:12px;}
+.wishlist-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);align-items:center;}
+.wishlist-item img{width:70px;height:70px;border-radius:var(--radius-sm);object-fit:cover;}
+.wishlist-item-info{flex:1;}
+.wishlist-item-info h5{font-size:.9rem;margin-bottom:4px;}
+
+/* ===================== COMPARE BAR / MODAL ===================== */
+#compare-bar{
+  position:fixed;bottom:0;left:0;right:0;background:var(--primary);color:#fff;z-index:700;padding:16px 32px;
+  display:flex;align-items:center;justify-content:space-between;transform:translateY(100%);transition:transform var(--t-med);
+}
+#compare-bar.show{transform:translateY(0);}
+.compare-thumbs{display:flex;gap:10px;align-items:center;}
+.compare-thumbs img{width:44px;height:44px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,.4);}
+
+/* ===================== MODALS ===================== */
+.modal-bg{position:fixed;inset:0;background:rgba(21,42,70,.5);backdrop-filter:blur(3px);z-index:1000;opacity:0;visibility:hidden;transition:all var(--t-med);display:flex;align-items:center;justify-content:center;padding:24px;}
+.modal-bg.show{opacity:1;visibility:visible;}
+.modal-box{background:var(--card);border-radius:var(--radius-lg);max-width:900px;width:100%;max-height:88vh;overflow-y:auto;transform:scale(.92);transition:transform var(--t-med);position:relative;}
+.modal-bg.show .modal-box{transform:scale(1);}
+.modal-close{position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:5;transition:background var(--t-fast);}
+.modal-close:hover{background:var(--border);}
+.product-modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.pm-media{height:100%;min-height:380px;}
+.pm-media img{width:100%;height:100%;object-fit:cover;}
+.pm-info{padding:40px;}
+.pm-info .product-cat{margin-bottom:8px;}
+.pm-info h2{font-size:1.5rem;margin-bottom:10px;}
+.pm-info .desc{color:var(--text-secondary);font-size:.9rem;margin:14px 0 20px;}
+.pm-specs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;}
+.pm-spec{font-size:.82rem;}
+.pm-spec span{display:block;color:var(--text-secondary);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
+.pm-price-row{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
+.pm-price-row .price-now{font-size:1.7rem;}
+.pm-actions{display:flex;gap:12px;align-items:center;}
+.pm-qty{display:flex;align-items:center;gap:14px;border:1.5px solid var(--border);border-radius:100px;padding:8px 16px;}
+.pm-qty button{width:26px;height:26px;display:flex;align-items:center;justify-content:center;}
+@media(max-width:760px){.product-modal-grid{grid-template-columns:1fr;}.pm-media{min-height:260px;}.pm-info{padding:26px;}}
+
+.lightbox-bg{position:fixed;inset:0;background:rgba(10,15,25,.94);z-index:1100;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all var(--t-med);}
+.lightbox-bg.show{opacity:1;visibility:visible;}
+.lightbox-bg img{max-width:88vw;max-height:82vh;border-radius:var(--radius-sm);}
+.lightbox-close,.lightbox-prev,.lightbox-next{position:absolute;color:#fff;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:background var(--t-fast);}
+.lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,.25);}
+.lightbox-close{top:24px;right:24px;}
+.lightbox-prev{left:24px;top:50%;transform:translateY(-50%);}
+.lightbox-next{right:24px;top:50%;transform:translateY(-50%);}
+
+.compare-table{width:100%;border-collapse:collapse;font-size:.86rem;}
+.compare-table th,.compare-table td{padding:14px 16px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top;}
+.compare-table th{color:var(--text-secondary);font-weight:600;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;width:140px;}
+.compare-table img{width:90px;height:90px;object-fit:cover;border-radius:var(--radius-sm);margin-bottom:8px;}
+.compare-remove{color:#c0392b;font-size:.76rem;margin-top:6px;display:inline-block;}
+.compare-modal-inner{padding:40px;overflow-x:auto;}
+
+@media(max-width:1024px){
+  .collections-grid, .about-media{}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:1150px){.why-grid{grid-template-columns:1fr 1fr;}.gallery-grid{grid-template-columns:repeat(3,1fr);}}
+</style>
+</head>
+<body>
+
+<!-- ===================== LOADING SCREEN ===================== -->
+<div id="loading-screen">
+  <div class="loader-mark">AURA<span style="color:var(--accent-light)">LUXE</span></div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ===================== TOASTS ===================== -->
+<div id="toast-container"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header id="siteHeader">
+  <div class="nav-wrap">
+    <a href="#home" class="logo">AURA<span>LUXE</span></a>
+    <div class="nav-actions">
+      <button class="nav-icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
+      </button>
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn" id="langBtn"><i class="fa-solid fa-globe"></i><span class="lang-label" id="currentLangLabel">EN</span></button>
+        <div class="lang-menu">
+          <button data-lang="en" class="active"><i class="fa-solid fa-check" style="opacity:0"></i> English</button>
+          <button data-lang="ru"><i class="fa-solid fa-check" style="opacity:0"></i> Русский</button>
+          <button data-lang="uz"><i class="fa-solid fa-check" style="opacity:0"></i> O'zbek</button>
+        </div>
+      </div>
+      <button class="nav-icon-btn" id="wishlistBtn" aria-label="Wishlist">
+        <i class="fa-solid fa-heart"></i>
+        <span class="badge-count" id="wishlistCount" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn" id="cartBtn" aria-label="Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge-count" id="cartCount" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn" aria-label="Account">
+        <i class="fa-regular fa-user"></i>
+      </button>
+      <a href="#contact" class="btn btn-primary btn-sm contact-nav-btn" data-i18n="nav.contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="hero-eyebrow"><i class="fa-solid fa-award"></i> <span data-i18n="hero.eyebrow">Since 2004 — Crafted in small batches</span></div>
+      <h1 data-i18n="hero.title">Furniture for a <em>considered</em> life</h1>
+      <p data-i18n="hero.sub">Solid oak, brushed brass, and honest linen — pieces built to be lived with for decades, not seasons.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary"><span data-i18n="hero.cta1">Shop the collection</span> <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#about" class="btn btn-outline" data-i18n="hero.cta2">Our story</a>
+      </div>
+      <div class="hero-materials">
+        <div class="material-swatch"><div class="swatch-chip" style="background:#7a5230"></div><span data-i18n="hero.mat1">Solid Oak</span></div>
+        <div class="material-swatch"><div class="swatch-chip" style="background:#B08D57"></div><span data-i18n="hero.mat2">Brushed Brass</span></div>
+        <div class="material-swatch"><div class="swatch-chip" style="background:#d8d2c4"></div><span data-i18n="hero.mat3">Boucle Linen</span></div>
+        <div class="material-swatch"><div class="swatch-chip" style="background:#1F3A5F"></div><span data-i18n="hero.mat4">Navy Velvet</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal-scale">
+      <div class="hero-slide active"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80" alt="Milano Leather Sofa"><div class="hero-slide-caption"><div class="name">Milano Leather Sofa</div><div class="price">$2,190</div></div></div>
+      <div class="hero-slide"><img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?w=900&q=80" alt="Eames-Inspired Lounge Chair"><div class="hero-slide-caption"><div class="name">Eames-Inspired Lounge Chair</div><div class="price">$980</div></div></div>
+      <div class="hero-slide"><img src="https://images.unsplash.com/photo-1616486338812-3dadaed26bff?w=900&q=80" alt="Upholstered Platform Bed"><div class="hero-slide-caption"><div class="name">Upholstered Platform Bed</div><div class="price">$1,640</div></div></div>
+      <div class="hero-dots">
+        <button class="active" data-i="0"></button><button data-i="1"></button><button data-i="2"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURED COLLECTIONS ===================== -->
+<section id="collections">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="collections.eyebrow">Featured Collections</div>
+      <h2 data-i18n="collections.title">Curated for every room</h2>
+      <p data-i18n="collections.sub">Three signature edits, built around how you actually live.</p>
+    </div>
+    <div class="collections-grid reveal">
+      <div class="collection-card" data-filter="Sofas"><img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=900&q=80" alt="Living Room Edit"><div class="collection-overlay"><h3 data-i18n="collections.c1">The Living Room Edit</h3><span data-i18n="collections.explore">Explore <i class="fa-solid fa-arrow-right"></i></span></div></div>
+      <div class="collection-card" data-filter="Beds"><img src="https://images.unsplash.com/photo-1616486338812-3dadaed26bff?w=700&q=80" alt="Bedroom Edit"><div class="collection-overlay"><h3 data-i18n="collections.c2">The Bedroom Edit</h3><span data-i18n="collections.explore">Explore <i class="fa-solid fa-arrow-right"></i></span></div></div>
+      <div class="collection-card" data-filter="Tables"><img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=700&q=80" alt="Study Edit"><div class="collection-overlay"><h3 data-i18n="collections.c3">The Study Edit</h3><span data-i18n="collections.explore">Explore <i class="fa-solid fa-arrow-right"></i></span></div></div>
+      <div class="collection-card" data-filter="Storage"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80" alt="Dining Edit"><div class="collection-overlay"><h3 data-i18n="collections.c4">The Dining Edit</h3><span data-i18n="collections.explore">Explore <i class="fa-solid fa-arrow-right"></i></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CATEGORIES ===================== -->
+<section id="categories" style="padding-top:0">
+  <div class="container">
+    <div class="section-head center reveal" style="margin:0 auto 50px">
+      <div class="eyebrow" data-i18n="categories.eyebrow">Shop by Category</div>
+      <h2 data-i18n="categories.title">Find your piece</h2>
+    </div>
+    <div class="cat-scroller reveal">
+      <div class="cat-card" data-cat="Sofas"><div class="cat-icon"><i class="fa-solid fa-couch"></i></div><h4 data-i18n="cat.sofas">Sofas</h4><p id="countSofas">8 items</p></div>
+      <div class="cat-card" data-cat="Chairs"><div class="cat-icon"><i class="fa-solid fa-chair"></i></div><h4 data-i18n="cat.chairs">Chairs</h4><p id="countChairs">8 items</p></div>
+      <div class="cat-card" data-cat="Tables"><div class="cat-icon"><i class="fa-solid fa-table"></i></div><h4 data-i18n="cat.tables">Tables</h4><p id="countTables">8 items</p></div>
+      <div class="cat-card" data-cat="Beds"><div class="cat-icon"><i class="fa-solid fa-bed"></i></div><h4 data-i18n="cat.beds">Beds</h4><p id="countBeds">8 items</p></div>
+      <div class="cat-card" data-cat="Storage"><div class="cat-icon"><i class="fa-solid fa-box-archive"></i></div><h4 data-i18n="cat.storage">Storage</h4><p id="countStorage">8 items</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BEST SELLERS ===================== -->
+<section id="bestsellers">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="best.eyebrow">Best Sellers</div>
+      <h2 data-i18n="best.title">Loved again and again</h2>
+    </div>
+    <div class="products-grid reveal" id="bestSellersGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== NEW ARRIVALS ===================== -->
+<section id="newarrivals" style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="new.eyebrow">New Arrivals</div>
+      <h2 data-i18n="new.title">Just landed</h2>
+    </div>
+    <div class="products-grid reveal" id="newArrivalsGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== ALL PRODUCTS ===================== -->
+<section id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="products.eyebrow">Full Catalogue</div>
+      <h2 data-i18n="products.title">All furniture</h2>
+    </div>
+    <div class="products-toolbar reveal">
+      <div class="filter-chips" id="filterChips">
+        <button class="filter-chip active" data-cat="All" data-i18n="filter.all">All</button>
+        <button class="filter-chip" data-cat="Sofas" data-i18n="cat.sofas">Sofas</button>
+        <button class="filter-chip" data-cat="Chairs" data-i18n="cat.chairs">Chairs</button>
+        <button class="filter-chip" data-cat="Tables" data-i18n="cat.tables">Tables</button>
+        <button class="filter-chip" data-cat="Beds" data-i18n="cat.beds">Beds</button>
+        <button class="filter-chip" data-cat="Storage" data-i18n="cat.storage">Storage</button>
+      </div>
+      <div class="tool-right">
+        <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="searchInput" data-i18n-ph="products.search" placeholder="Search furniture..."></div>
+        <select class="sort-select" id="sortSelect">
+          <option value="featured" data-i18n="sort.featured">Featured</option>
+          <option value="price-asc" data-i18n="sort.priceAsc">Price: Low to High</option>
+          <option value="price-desc" data-i18n="sort.priceDesc">Price: High to Low</option>
+          <option value="rating" data-i18n="sort.rating">Top Rated</option>
+        </select>
+      </div>
+    </div>
+    <div class="products-grid reveal" id="productsGrid"></div>
+    <div class="load-more-wrap">
+      <button class="btn btn-outline" id="loadMoreBtn"><span data-i18n="products.loadMore">Load more</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RECENTLY VIEWED ===================== -->
+<section id="recentlyViewedSection" style="padding-top:0;display:none">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-i18n="recent.eyebrow">Recently Viewed</div>
+      <h2 data-i18n="recent.title">Pick up where you left off</h2>
+    </div>
+    <div class="products-grid reveal" id="recentGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow" data-i18n="gallery.eyebrow">Interior Inspiration</div>
+      <h2 data-i18n="gallery.title">Real rooms, real pieces</h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1400&q=80"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="Interior 1"></div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=1400&q=80"><img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80" alt="Interior 2"></div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1503602642458-232111445657?w=1400&q=80"><img src="https://images.unsplash.com/photo-1503602642458-232111445657?w=600&q=80" alt="Interior 3"></div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?w=1400&q=80"><img src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?w=600&q=80" alt="Interior 4"></div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=1400&q=80"><img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&q=80" alt="Interior 5"></div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1550254478-ead40cc54513?w=1400&q=80"><img src="https://images.unsplash.com/photo-1550254478-ead40cc54513?w=600&q=80" alt="Interior 6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section id="why">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow" data-i18n="why.eyebrow">Why Choose Us</div>
+      <h2 data-i18n="why.title">Built to be kept</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card"><div class="why-icon"><i class="fa-solid fa-tree"></i></div><h4 data-i18n="why.c1t">Responsibly Sourced</h4><p data-i18n="why.c1d">FSC-certified timber and low-impact finishes on every wooden piece.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fa-solid fa-truck-fast"></i></div><h4 data-i18n="why.c2t">White-Glove Delivery</h4><p data-i18n="why.c2d">In-home assembly and packaging removal, scheduled around you.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fa-solid fa-shield-heart"></i></div><h4 data-i18n="why.c3t">10-Year Warranty</h4><p data-i18n="why.c3d">Frames and mechanisms covered for a decade, no fine print.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fa-solid fa-rotate-left"></i></div><h4 data-i18n="why.c4t">100-Night Trial</h4><p data-i18n="why.c4d">Live with it. If it's not right, we'll collect it free of charge.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATISTICS ===================== -->
+<section id="stats" style="padding:60px 0">
+  <div class="stats-section reveal">
+    <div class="stats-grid">
+      <div><div class="stat-num" data-target="24">0</div><div class="stat-label" data-i18n="stats.s1">Years of craftsmanship</div></div>
+      <div><div class="stat-num" data-target="58000">0</div><div class="stat-label" data-i18n="stats.s2">Homes furnished</div></div>
+      <div><div class="stat-num" data-target="120">0</div><div class="stat-label" data-i18n="stats.s3">Master artisans</div></div>
+      <div><div class="stat-num" data-target="98">0</div><div class="stat-label" data-i18n="stats.s4">% would recommend</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow" data-i18n="testi.eyebrow">Testimonials</div>
+      <h2 data-i18n="testi.title">What our clients say</h2>
+    </div>
+    <div class="testi-wrap reveal">
+      <div class="testi-slide active">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="testi-quote" data-i18n="testi.q1">"Three years on, our sofa still looks new. The oak legs have actually gotten more beautiful with age."</p>
+        <div class="testi-person"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80" alt="Client"><div><div class="name" data-i18n="testi.n1">Sarah Whitfield</div><div class="role" data-i18n="testi.r1">Interior Designer</div></div></div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="testi-quote" data-i18n="testi.q2">"White-glove delivery was flawless — assembled, styled, and gone within the hour."</p>
+        <div class="testi-person"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Client"><div><div class="name" data-i18n="testi.n2">Marcus Reyes</div><div class="role" data-i18n="testi.r2">Architect</div></div></div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+        <p class="testi-quote" data-i18n="testi.q3">"The 100-night trial made the decision easy. We ended up keeping every single piece."</p>
+        <div class="testi-person"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="Client"><div><div class="name" data-i18n="testi.n3">Elena Popova</div><div class="role" data-i18n="testi.r3">Homeowner</div></div></div>
+      </div>
+      <div class="testi-nav">
+        <button id="testiPrev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="testiNext"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROMOTIONS ===================== -->
+<section id="promotions" style="padding-top:0">
+  <div class="container">
+    <div class="promo-banner reveal">
+      <div class="promo-text">
+        <h3 data-i18n="promo.title">End of Season — up to 30% off</h3>
+        <p data-i18n="promo.sub">Selected sofas, beds and dining sets. Use the code at checkout.</p>
+        <div class="promo-code"><span data-i18n="promo.code">Code:</span> <strong>AURA30</strong> <button class="btn-ghost btn-sm" id="copyPromoBtn" style="color:#fff"><i class="fa-regular fa-copy"></i></button></div>
+      </div>
+      <div class="promo-timer" id="promoTimer">
+        <div class="t-box"><div class="t-num" id="tDays">00</div><div class="t-label" data-i18n="promo.days">Days</div></div>
+        <div class="t-box"><div class="t-num" id="tHours">00</div><div class="t-label" data-i18n="promo.hours">Hours</div></div>
+        <div class="t-box"><div class="t-num" id="tMins">00</div><div class="t-label" data-i18n="promo.mins">Min</div></div>
+        <div class="t-box"><div class="t-num" id="tSecs">00</div><div class="t-label" data-i18n="promo.secs">Sec</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-media reveal-scale">
+      <img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=900&q=80" alt="AURA LUXE Workshop">
+      <div class="about-badge"><div class="num">24</div><div class="lbl" data-i18n="about.years">Years</div></div>
+    </div>
+    <div class="about-copy reveal">
+      <div class="eyebrow" data-i18n="about.eyebrow">Our Story</div>
+      <h2 style="font-size:clamp(1.9rem,3vw,2.5rem);margin-bottom:20px" data-i18n="about.title">Made by hand, made to last</h2>
+      <p data-i18n="about.p1">AURA LUXE began in a small joinery workshop with a simple belief: furniture should be an inheritance, not a purchase. Every piece still passes through the hands of a master craftsperson before it reaches your door.</p>
+      <p data-i18n="about.p2">Today we work with over 120 artisans across Europe and Central Asia, sourcing solid timber, full-grain leather, and natural fibers — never veneer, never particleboard.</p>
+      <ul class="about-list">
+        <li><i class="fa-solid fa-check"></i><span data-i18n="about.l1">Solid materials only — no MDF, no laminate</span></li>
+        <li><i class="fa-solid fa-check"></i><span data-i18n="about.l2">Small-batch production, made to order</span></li>
+        <li><i class="fa-solid fa-check"></i><span data-i18n="about.l3">Carbon-neutral shipping on every order</span></li>
+      </ul>
+      <a href="#contact" class="btn btn-accent" style="margin-top:30px"><span data-i18n="about.cta">Visit our showroom</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow" data-i18n="faq.eyebrow">FAQ</div>
+      <h2 data-i18n="faq.title">Good to know</h2>
+    </div>
+    <div class="faq-list reveal" id="faqList">
+      <div class="faq-item open">
+        <button class="faq-q"><span data-i18n="faq.q1">How long does delivery take?</span><i class="fa-solid fa-plus"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a1">Most in-stock pieces arrive within 2–4 weeks. Made-to-order items typically take 6–10 weeks, and we'll confirm an exact window at checkout.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q2">Can I return a piece if it doesn't fit my space?</span><i class="fa-solid fa-plus"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a2">Yes — every order includes a 100-night trial. If it isn't right, we arrange free collection and a full refund.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q3">Do you offer assembly?</span><i class="fa-solid fa-plus"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a3">All deliveries include white-glove assembly and packaging removal at no extra cost.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q4">What materials do you use?</span><i class="fa-solid fa-plus"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a4">Solid oak, ash and walnut, full-grain leather, boucle wool, linen and brushed brass hardware — no particleboard or veneer.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q5">Is there a warranty?</span><i class="fa-solid fa-plus"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a5">Every frame and mechanism is covered for 10 years against manufacturing defects.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span data-i18n="faq.q6">Do you ship internationally?</span><i class="fa-solid fa-plus"></i></button>
+        <div class="faq-a"><p data-i18n="faq.a6">We currently deliver across Europe and Central Asia, with carbon-neutral freight on every order.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <div class="eyebrow" data-i18n="contact.eyebrow">Get in touch</div>
+      <h2 style="font-size:clamp(1.9rem,3vw,2.5rem);margin-bottom:24px" data-i18n="contact.title">Visit or write to us</h2>
+      <div class="contact-info-card"><div class="ic"><i class="fa-solid fa-location-dot"></i></div><div><h5 data-i18n="contact.addrT">Showroom</h5><p data-i18n="contact.addrV">12 Amir Temur Ave, Tashkent, Uzbekistan</p></div></div>
+      <div class="contact-info-card"><div class="ic"><i class="fa-solid fa-phone"></i></div><div><h5 data-i18n="contact.phoneT">Phone</h5><p>+998 71 200 55 66</p></div></div>
+      <div class="contact-info-card"><div class="ic"><i class="fa-solid fa-envelope"></i></div><div><h5 data-i18n="contact.emailT">Email</h5><p>hello@auraluxe.com</p></div></div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=Amir+Temur+Avenue,+Tashkent,+Uzbekistan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="AURA LUXE Showroom Map"></iframe>
+      </div>
+    </div>
+    <div class="reveal">
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group" id="fg-name">
+            <label data-i18n="contact.fName">Full name</label>
+            <input type="text" id="cf-name" data-i18n-ph="contact.phName" placeholder="Your name">
+            <div class="form-error-msg" data-i18n="contact.errName">Please enter your name.</div>
+          </div>
+          <div class="form-group" id="fg-email">
+            <label data-i18n="contact.fEmail">Email</label>
+            <input type="text" id="cf-email" data-i18n-ph="contact.phEmail" placeholder="you@email.com">
+            <div class="form-error-msg" data-i18n="contact.errEmail">Please enter a valid email.</div>
+          </div>
+        </div>
+        <div class="form-group" id="fg-subject">
+          <label data-i18n="contact.fSubject">Subject</label>
+          <input type="text" id="cf-subject" data-i18n-ph="contact.phSubject" placeholder="How can we help?">
+          <div class="form-error-msg" data-i18n="contact.errSubject">Please enter a subject.</div>
+        </div>
+        <div class="form-group" id="fg-message">
+          <label data-i18n="contact.fMessage">Message</label>
+          <textarea id="cf-message" rows="5" data-i18n-ph="contact.phMessage" placeholder="Tell us about your space..."></textarea>
+          <div class="form-error-msg" data-i18n="contact.errMessage">Please write a short message (min. 10 characters).</div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%"><span data-i18n="contact.send">Send message</span> <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-logo">AURA<span>LUXE</span></div>
+      <p data-i18n="footer.about">Furniture built from solid materials, made by hand, and backed for a decade. Considered pieces for a considered home.</p>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@aqcoder" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://instagram.com/aqcoder" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://t.me/Alisher_AQ" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5 data-i18n="footer.shop">Shop</h5>
+      <ul>
+        <li><a href="#products" data-i18n="cat.sofas">Sofas</a></li>
+        <li><a href="#products" data-i18n="cat.chairs">Chairs</a></li>
+        <li><a href="#products" data-i18n="cat.tables">Tables</a></li>
+        <li><a href="#products" data-i18n="cat.beds">Beds</a></li>
+        <li><a href="#products" data-i18n="cat.storage">Storage</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5 data-i18n="footer.company">Company</h5>
+      <ul>
+        <li><a href="#about" data-i18n="footer.aboutLink">About us</a></li>
+        <li><a href="#faq" data-i18n="footer.faqLink">FAQ</a></li>
+        <li><a href="#contact" data-i18n="footer.contactLink">Contact</a></li>
+        <li><a href="#gallery" data-i18n="footer.galleryLink">Gallery</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5 data-i18n="footer.newsletter">Newsletter</h5>
+      <p style="margin-bottom:14px" data-i18n="footer.newsSub">New arrivals and offers, once a month. No spam.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="text" id="newsletterEmail" data-i18n-ph="footer.newsPh" placeholder="Your email">
+        <button type="submit" data-i18n="footer.newsBtn">Join</button>
+      </form>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span data-i18n="footer.rights">© 2026 AURA LUXE. All rights reserved.</span>
+    <span data-i18n="footer.credit">Built for a coursework project by Alisher.</span>
+  </div>
+</footer>
+
+<!-- ===================== FLOATING ELEMENTS ===================== -->
+<div class="floating-social">
+  <a href="https://www.youtube.com/@aqcoder" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+  <a href="https://instagram.com/aqcoder" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://t.me/Alisher_AQ" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+</div>
+<button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ===================== COOKIE CONSENT ===================== -->
+<div id="cookie-banner">
+  <p data-i18n="cookie.text">We use cookies to remember your cart, wishlist and preferences. Nothing leaves your browser.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-outline btn-sm" id="cookieDecline" data-i18n="cookie.decline">Decline</button>
+    <button class="btn btn-primary btn-sm" id="cookieAccept" data-i18n="cookie.accept">Accept</button>
+  </div>
+</div>
+
+<!-- ===================== CART DRAWER ===================== -->
+<div class="overlay-bg" id="overlayBg"></div>
+<div class="drawer" id="cartDrawer">
+  <div class="drawer-head"><h3 data-i18n="cart.title">Your Cart</h3><button class="drawer-close" data-close-drawer><i class="fa-solid fa-xmark"></i></button></div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot" style="display:none">
+    <div class="sum-row"><span data-i18n="cart.subtotal">Subtotal</span><span id="cartSubtotal">$0</span></div>
+    <div class="sum-row"><span data-i18n="cart.vat">VAT (12%)</span><span id="cartVat">$0</span></div>
+    <div class="sum-row total"><span data-i18n="cart.total">Total</span><span id="cartTotal">$0</span></div>
+    <button class="btn btn-primary" style="width:100%;margin-top:14px" id="checkoutBtn"><span data-i18n="cart.checkout">Checkout</span></button>
+  </div>
+</div>
+
+<!-- ===================== WISHLIST DRAWER ===================== -->
+<div class="drawer" id="wishlistDrawer">
+  <div class="drawer-head"><h3 data-i18n="wishlist.title">Your Wishlist</h3><button class="drawer-close" data-close-drawer><i class="fa-solid fa-xmark"></i></button></div>
+  <div class="drawer-body" id="wishlistBody"></div>
+</div>
+
+<!-- ===================== COMPARE BAR ===================== -->
+<div id="compare-bar">
+  <div class="compare-thumbs" id="compareThumbs"></div>
+  <div style="display:flex;gap:12px;align-items:center">
+    <button class="btn btn-accent btn-sm" id="compareViewBtn"><span data-i18n="compare.view">Compare</span></button>
+    <button class="btn-ghost" style="color:#fff" id="compareClearBtn"><span data-i18n="compare.clear">Clear</span></button>
+  </div>
+</div>
+
+<!-- ===================== PRODUCT MODAL ===================== -->
+<div class="modal-bg" id="productModalBg">
+  <div class="modal-box" id="productModalBox">
+    <button class="modal-close" data-close-modal="productModalBg"><i class="fa-solid fa-xmark"></i></button>
+    <div class="product-modal-grid" id="productModalContent"></div>
+  </div>
+</div>
+
+<!-- ===================== COMPARE MODAL ===================== -->
+<div class="modal-bg" id="compareModalBg">
+  <div class="modal-box" style="max-width:1000px">
+    <button class="modal-close" data-close-modal="compareModalBg"><i class="fa-solid fa-xmark"></i></button>
+    <div class="compare-modal-inner">
+      <h2 style="margin-bottom:24px" data-i18n="compare.title">Compare products</h2>
+      <div style="overflow-x:auto"><table class="compare-table" id="compareTable"></table></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lightbox-bg" id="lightboxBg">
+  <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
+  <img id="lightboxImg" src="" alt="Gallery preview">
+  <button class="lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<script>
+/* =====================================================================
+   AURA LUXE — application script
+   Sections: i18n, data, render, cart, wishlist, compare, ui utilities
+   ===================================================================== */
+(function(){
+"use strict";
+
+/* ---------------------------------------------------------------------
+   1. TRANSLATIONS
+--------------------------------------------------------------------- */
+const translations = {
+  en: {
+    "nav.contact":"Contact",
+    "hero.eyebrow":"Since 2004 — Crafted in small batches",
+    "hero.title":"Furniture for a <em>considered</em> life",
+    "hero.sub":"Solid oak, brushed brass, and honest linen — pieces built to be lived with for decades, not seasons.",
+    "hero.cta1":"Shop the collection","hero.cta2":"Our story",
+    "hero.mat1":"Solid Oak","hero.mat2":"Brushed Brass","hero.mat3":"Boucle Linen","hero.mat4":"Navy Velvet",
+    "collections.eyebrow":"Featured Collections","collections.title":"Curated for every room","collections.sub":"Three signature edits, built around how you actually live.",
+    "collections.c1":"The Living Room Edit","collections.c2":"The Bedroom Edit","collections.c3":"The Study Edit","collections.c4":"The Dining Edit","collections.explore":"Explore",
+    "categories.eyebrow":"Shop by Category","categories.title":"Find your piece",
+    "cat.sofas":"Sofas","cat.chairs":"Chairs","cat.tables":"Tables","cat.beds":"Beds","cat.storage":"Storage",
+    "best.eyebrow":"Best Sellers","best.title":"Loved again and again",
+    "new.eyebrow":"New Arrivals","new.title":"Just landed",
+    "products.eyebrow":"Full Catalogue","products.title":"All furniture","products.search":"Search furniture...","products.loadMore":"Load more",
+    "filter.all":"All",
+    "sort.featured":"Featured","sort.priceAsc":"Price: Low to High","sort.priceDesc":"Price: High to Low","sort.rating":"Top Rated",
+    "recent.eyebrow":"Recently Viewed","recent.title":"Pick up where you left off",
+    "gallery.eyebrow":"Interior Inspiration","gallery.title":"Real rooms, real pieces",
+    "why.eyebrow":"Why Choose Us","why.title":"Built to be kept",
+    "why.c1t":"Responsibly Sourced","why.c1d":"FSC-certified timber and low-impact finishes on every wooden piece.",
+    "why.c2t":"White-Glove Delivery","why.c2d":"In-home assembly and packaging removal, scheduled around you.",
+    "why.c3t":"10-Year Warranty","why.c3d":"Frames and mechanisms covered for a decade, no fine print.",
+    "why.c4t":"100-Night Trial","why.c4d":"Live with it. If it's not right, we'll collect it free of charge.",
+    "stats.s1":"Years of craftsmanship","stats.s2":"Homes furnished","stats.s3":"Master artisans","stats.s4":"% would recommend",
+    "testi.eyebrow":"Testimonials","testi.title":"What our clients say",
+    "testi.q1":"\"Three years on, our sofa still looks new. The oak legs have actually gotten more beautiful with age.\"",
+    "testi.n1":"Sarah Whitfield","testi.r1":"Interior Designer",
+    "testi.q2":"\"White-glove delivery was flawless — assembled, styled, and gone within the hour.\"",
+    "testi.n2":"Marcus Reyes","testi.r2":"Architect",
+    "testi.q3":"\"The 100-night trial made the decision easy. We ended up keeping every single piece.\"",
+    "testi.n3":"Elena Popova","testi.r3":"Homeowner",
+    "promo.title":"End of Season — up to 30% off","promo.sub":"Selected sofas, beds and dining sets. Use the code at checkout.","promo.code":"Code:",
+    "promo.days":"Days","promo.hours":"Hours","promo.mins":"Min","promo.secs":"Sec",
+    "about.eyebrow":"Our Story","about.title":"Made by hand, made to last","about.years":"Years",
+    "about.p1":"AURA LUXE began in a small joinery workshop with a simple belief: furniture should be an inheritance, not a purchase. Every piece still passes through the hands of a master craftsperson before it reaches your door.",
+    "about.p2":"Today we work with over 120 artisans across Europe and Central Asia, sourcing solid timber, full-grain leather, and natural fibers — never veneer, never particleboard.",
+    "about.l1":"Solid materials only — no MDF, no laminate","about.l2":"Small-batch production, made to order","about.l3":"Carbon-neutral shipping on every order","about.cta":"Visit our showroom",
+    "faq.eyebrow":"FAQ","faq.title":"Good to know",
+    "faq.q1":"How long does delivery take?","faq.a1":"Most in-stock pieces arrive within 2–4 weeks. Made-to-order items typically take 6–10 weeks, and we'll confirm an exact window at checkout.",
+    "faq.q2":"Can I return a piece if it doesn't fit my space?","faq.a2":"Yes — every order includes a 100-night trial. If it isn't right, we arrange free collection and a full refund.",
+    "faq.q3":"Do you offer assembly?","faq.a3":"All deliveries include white-glove assembly and packaging removal at no extra cost.",
+    "faq.q4":"What materials do you use?","faq.a4":"Solid oak, ash and walnut, full-grain leather, boucle wool, linen and brushed brass hardware — no particleboard or veneer.",
+    "faq.q5":"Is there a warranty?","faq.a5":"Every frame and mechanism is covered for 10 years against manufacturing defects.",
+    "faq.q6":"Do you ship internationally?","faq.a6":"We currently deliver across Europe and Central Asia, with carbon-neutral freight on every order.",
+    "contact.eyebrow":"Get in touch","contact.title":"Visit or write to us",
+    "contact.addrT":"Showroom","contact.addrV":"12 Amir Temur Ave, Tashkent, Uzbekistan","contact.phoneT":"Phone","contact.emailT":"Email",
+    "contact.fName":"Full name","contact.phName":"Your name","contact.errName":"Please enter your name.",
+    "contact.fEmail":"Email","contact.phEmail":"you@email.com","contact.errEmail":"Please enter a valid email.",
+    "contact.fSubject":"Subject","contact.phSubject":"How can we help?","contact.errSubject":"Please enter a subject.",
+    "contact.fMessage":"Message","contact.phMessage":"Tell us about your space...","contact.errMessage":"Please write a short message (min. 10 characters).",
+    "contact.send":"Send message",
+    "footer.about":"Furniture built from solid materials, made by hand, and backed for a decade. Considered pieces for a considered home.",
+    "footer.shop":"Shop","footer.company":"Company","footer.aboutLink":"About us","footer.faqLink":"FAQ","footer.contactLink":"Contact","footer.galleryLink":"Gallery",
+    "footer.newsletter":"Newsletter","footer.newsSub":"New arrivals and offers, once a month. No spam.","footer.newsPh":"Your email","footer.newsBtn":"Join",
+    "footer.rights":"© 2026 AURA LUXE. All rights reserved.","footer.credit":"Built for a coursework project by Alisher.",
+    "cookie.text":"We use cookies to remember your cart, wishlist and preferences. Nothing leaves your browser.","cookie.decline":"Decline","cookie.accept":"Accept",
+    "cart.title":"Your Cart","cart.subtotal":"Subtotal","cart.vat":"VAT (12%)","cart.total":"Total","cart.checkout":"Checkout","cart.empty":"Your cart is empty.",
+    "wishlist.title":"Your Wishlist","wishlist.empty":"Your wishlist is empty.",
+    "compare.view":"Compare","compare.clear":"Clear","compare.title":"Compare products","compare.empty":"Add up to 3 products to compare.",
+    "toast.addedCart":"Added to cart","toast.removedCart":"Removed from cart","toast.addedWish":"Added to wishlist","toast.removedWish":"Removed from wishlist",
+    "toast.compareFull":"You can compare up to 3 products","toast.messageSent":"Message sent — we'll reply within 24 hours","toast.subscribed":"Subscribed! Check your inbox soon.",
+    "toast.promoCopied":"Promo code copied","product.addToCart":"Add to cart","product.quantity":"Quantity","product.material":"Material","product.dimensions":"Dimensions","product.reviews":"reviews"
+  },
+  ru: {
+    "nav.contact":"Контакты",
+    "hero.eyebrow":"С 2004 года — изготовление малыми партиями",
+    "hero.title":"Мебель для <em>осознанной</em> жизни",
+    "hero.sub":"Массив дуба, латунь и натуральный лён — вещи, с которыми живут десятилетиями, а не один сезон.",
+    "hero.cta1":"Смотреть коллекцию","hero.cta2":"Наша история",
+    "hero.mat1":"Массив дуба","hero.mat2":"Матовая латунь","hero.mat3":"Букле-лён","hero.mat4":"Синий бархат",
+    "collections.eyebrow":"Коллекции","collections.title":"Подобрано для каждой комнаты","collections.sub":"Три авторские подборки под ваш образ жизни.",
+    "collections.c1":"Гостиная","collections.c2":"Спальня","collections.c3":"Кабинет","collections.c4":"Столовая","collections.explore":"Смотреть",
+    "categories.eyebrow":"Категории","categories.title":"Найдите свою вещь",
+    "cat.sofas":"Диваны","cat.chairs":"Кресла","cat.tables":"Столы","cat.beds":"Кровати","cat.storage":"Хранение",
+    "best.eyebrow":"Хиты продаж","best.title":"Любимые модели",
+    "new.eyebrow":"Новинки","new.title":"Только что поступили",
+    "products.eyebrow":"Каталог","products.title":"Вся мебель","products.search":"Поиск мебели...","products.loadMore":"Показать ещё",
+    "filter.all":"Все",
+    "sort.featured":"Рекомендуемые","sort.priceAsc":"Цена: по возрастанию","sort.priceDesc":"Цена: по убыванию","sort.rating":"По рейтингу",
+    "recent.eyebrow":"Вы недавно смотрели","recent.title":"Продолжите просмотр",
+    "gallery.eyebrow":"Вдохновение для интерьера","gallery.title":"Настоящие комнаты, настоящая мебель",
+    "why.eyebrow":"Почему мы","why.title":"Создано, чтобы остаться с вами",
+    "why.c1t":"Ответственные материалы","why.c1d":"Древесина с сертификатом FSC и щадящие покрытия в каждом изделии.",
+    "why.c2t":"Доставка White-Glove","why.c2d":"Сборка на дому и вывоз упаковки в удобное для вас время.",
+    "why.c3t":"Гарантия 10 лет","why.c3d":"Каркасы и механизмы под гарантией десять лет, без мелкого шрифта.",
+    "why.c4t":"100 ночей на пробу","why.c4d":"Поживите с покупкой. Если не подошло — заберём бесплатно.",
+    "stats.s1":"Лет мастерства","stats.s2":"Обставленных домов","stats.s3":"Мастеров-ремесленников","stats.s4":"% готовы рекомендовать",
+    "testi.eyebrow":"Отзывы","testi.title":"Что говорят наши клиенты",
+    "testi.q1":"«Спустя три года диван всё ещё как новый. Дубовые ножки со временем стали только красивее».",
+    "testi.n1":"Сара Уитфилд","testi.r1":"Дизайнер интерьера",
+    "testi.q2":"«Доставка White-Glove прошла безупречно — собрали, расставили и ушли меньше чем за час».",
+    "testi.n2":"Маркус Рейес","testi.r2":"Архитектор",
+    "testi.q3":"«Пробный период в 100 ночей всё упростил. В итоге мы оставили себе каждую вещь».",
+    "testi.n3":"Елена Попова","testi.r3":"Домовладелица",
+    "promo.title":"Конец сезона — скидки до 30%","promo.sub":"На избранные диваны, кровати и обеденные группы. Введите код при оформлении.","promo.code":"Код:",
+    "promo.days":"Дней","promo.hours":"Часов","promo.mins":"Мин","promo.secs":"Сек",
+    "about.eyebrow":"Наша история","about.title":"Сделано вручную, чтобы служить долго","about.years":"Лет",
+    "about.p1":"AURA LUXE начиналась в небольшой столярной мастерской с простой идеи: мебель должна передаваться по наследству, а не просто покупаться. Каждое изделие и сегодня проходит через руки мастера, прежде чем попасть к вам домой.",
+    "about.p2":"Сегодня мы работаем более чем со 120 мастерами в Европе и Центральной Азии, используя массив дерева, кожу растительного дубления и натуральные волокна — никогда шпон, никогда ДСП.",
+    "about.l1":"Только цельные материалы — никакого МДФ и ламината","about.l2":"Малыми партиями, под заказ","about.l3":"Углеродно-нейтральная доставка каждого заказа","about.cta":"Посетить шоурум",
+    "faq.eyebrow":"Вопросы и ответы","faq.title":"Полезно знать",
+    "faq.q1":"Сколько занимает доставка?","faq.a1":"Товары в наличии приходят за 2–4 недели. Изделия под заказ — обычно 6–10 недель, точный срок подтвердим при оформлении.",
+    "faq.q2":"Можно ли вернуть вещь, если она не подошла?","faq.a2":"Да — каждый заказ включает 100 ночей на пробу. Если не подошло, бесплатно заберём и вернём деньги полностью.",
+    "faq.q3":"Есть ли сборка?","faq.a3":"Каждая доставка включает сборку на месте и вывоз упаковки без доплаты.",
+    "faq.q4":"Какие материалы вы используете?","faq.a4":"Массив дуба, ясеня и ореха, кожа растительного дубления, шерсть букле, лён и фурнитура из матовой латуни — никакого ДСП или шпона.",
+    "faq.q5":"Есть ли гарантия?","faq.a5":"Каждый каркас и механизм имеет гарантию 10 лет от производственных дефектов.",
+    "faq.q6":"Есть ли доставка за рубеж?","faq.a6":"Сейчас мы доставляем по Европе и Центральной Азии, с углеродно-нейтральной логистикой в каждом заказе.",
+    "contact.eyebrow":"Связаться с нами","contact.title":"Приезжайте или напишите нам",
+    "contact.addrT":"Шоурум","contact.addrV":"Проспект Амира Темура 12, Ташкент, Узбекистан","contact.phoneT":"Телефон","contact.emailT":"Email",
+    "contact.fName":"Полное имя","contact.phName":"Ваше имя","contact.errName":"Пожалуйста, укажите ваше имя.",
+    "contact.fEmail":"Email","contact.phEmail":"you@email.com","contact.errEmail":"Пожалуйста, укажите корректный email.",
+    "contact.fSubject":"Тема","contact.phSubject":"Чем мы можем помочь?","contact.errSubject":"Пожалуйста, укажите тему.",
+    "contact.fMessage":"Сообщение","contact.phMessage":"Расскажите о вашем пространстве...","contact.errMessage":"Пожалуйста, напишите сообщение (мин. 10 символов).",
+    "contact.send":"Отправить сообщение",
+    "footer.about":"Мебель из цельных материалов, сделанная вручную и с гарантией на десять лет. Продуманные вещи для продуманного дома.",
+    "footer.shop":"Магазин","footer.company":"Компания","footer.aboutLink":"О нас","footer.faqLink":"Вопросы","footer.contactLink":"Контакты","footer.galleryLink":"Галерея",
+    "footer.newsletter":"Рассылка","footer.newsSub":"Новинки и акции раз в месяц. Без спама.","footer.newsPh":"Ваш email","footer.newsBtn":"Подписаться",
+    "footer.rights":"© 2026 AURA LUXE. Все права защищены.","footer.credit":"Курсовой проект, разработано Алишером.",
+    "cookie.text":"Мы используем cookies, чтобы запоминать корзину, избранное и настройки. Всё остаётся в вашем браузере.","cookie.decline":"Отклонить","cookie.accept":"Принять",
+    "cart.title":"Ваша корзина","cart.subtotal":"Подытог","cart.vat":"НДС (12%)","cart.total":"Итого","cart.checkout":"Оформить заказ","cart.empty":"Ваша корзина пуста.",
+    "wishlist.title":"Избранное","wishlist.empty":"Список избранного пуст.",
+    "compare.view":"Сравнить","compare.clear":"Очистить","compare.title":"Сравнение товаров","compare.empty":"Добавьте до 3 товаров для сравнения.",
+    "toast.addedCart":"Добавлено в корзину","toast.removedCart":"Удалено из корзины","toast.addedWish":"Добавлено в избранное","toast.removedWish":"Удалено из избранного",
+    "toast.compareFull":"Можно сравнить не более 3 товаров","toast.messageSent":"Сообщение отправлено — ответим в течение 24 часов","toast.subscribed":"Вы подписаны! Проверьте почту.",
+    "toast.promoCopied":"Промокод скопирован","product.addToCart":"В корзину","product.quantity":"Количество","product.material":"Материал","product.dimensions":"Размеры","product.reviews":"отзывов"
+  },
+  uz: {
+    "nav.contact":"Aloqa",
+    "hero.eyebrow":"2004-yildan beri — kichik partiyalarda ishlab chiqarish",
+    "hero.title":"<em>O'ylangan</em> hayot uchun mebel",
+    "hero.sub":"Massiv eman, jilolangan latun va tabiiy zig'ir — o'n yillar davomida, bir mavsum emas, xizmat qiladigan buyumlar.",
+    "hero.cta1":"To'plamni ko'rish","hero.cta2":"Bizning tariximiz",
+    "hero.mat1":"Massiv eman","hero.mat2":"Jilolangan latun","hero.mat3":"Bukle-zig'ir","hero.mat4":"Ko'k baxmal",
+    "collections.eyebrow":"Tanlangan to'plamlar","collections.title":"Har bir xona uchun tanlangan","collections.sub":"Sizning turmush tarzingizga mos uchta muallif to'plami.",
+    "collections.c1":"Mehmonxona to'plami","collections.c2":"Yotoqxona to'plami","collections.c3":"Ish xonasi to'plami","collections.c4":"Oshxona to'plami","collections.explore":"Ko'rish",
+    "categories.eyebrow":"Kategoriyalar","categories.title":"O'zingizga mosini toping",
+    "cat.sofas":"Divanlar","cat.chairs":"Kreslolar","cat.tables":"Stollar","cat.beds":"Krovatlar","cat.storage":"Saqlash",
+    "best.eyebrow":"Ko'p sotilganlar","best.title":"Doim sevib xarid qilinadigan",
+    "new.eyebrow":"Yangi kelganlar","new.title":"Yaqinda qo'shildi",
+    "products.eyebrow":"To'liq katalog","products.title":"Barcha mebellar","products.search":"Mebel qidirish...","products.loadMore":"Ko'proq ko'rsatish",
+    "filter.all":"Barchasi",
+    "sort.featured":"Tavsiya etilgan","sort.priceAsc":"Narx: arzondan qimmatga","sort.priceDesc":"Narx: qimmatdan arzonga","sort.rating":"Reyting bo'yicha",
+    "recent.eyebrow":"Yaqinda ko'rilgan","recent.title":"To'xtagan joyingizdan davom eting",
+    "gallery.eyebrow":"Interyer ilhomi","gallery.title":"Haqiqiy xonalar, haqiqiy mebel",
+    "why.eyebrow":"Nega aynan biz","why.title":"Uzoq xizmat qilish uchun yaratilgan",
+    "why.c1t":"Mas'uliyat bilan yetkazib berilgan","why.c1d":"Har bir yog'och buyumda FSC sertifikatli yog'och va ekologik bo'yoqlar.",
+    "why.c2t":"White-Glove yetkazib berish","why.c2d":"Uyingizda yig'ish va qadoqni olib ketish, sizga qulay vaqtda.",
+    "why.c3t":"10 yillik kafolat","why.c3d":"Karkas va mexanizmlarga o'n yillik kafolat, hech qanday kichik shrift yo'q.",
+    "why.c4t":"100 kechalik sinov","why.c4d":"Bemalol foydalaning. Yoqmasa — bepul olib ketamiz.",
+    "stats.s1":"Yillik tajriba","stats.s2":"Jihozlangan uylar","stats.s3":"Usta hunarmandlar","stats.s4":"% tavsiya qiladi",
+    "testi.eyebrow":"Mijozlar fikri","testi.title":"Mijozlarimiz nima deydi",
+    "testi.q1":"«Uch yil o'tdi, divanimiz hali ham yangidek. Eman oyoqlari esa vaqt o'tishi bilan yanada chiroyli bo'lib bormoqda».",
+    "testi.n1":"Sara Uitfild","testi.r1":"Interyer dizayneri",
+    "testi.q2":"«White-Glove yetkazib berish benuqson bo'ldi — bir soat ichida yig'ib, joylashtirib ketishdi».",
+    "testi.n2":"Markus Reyes","testi.r2":"Arxitektor",
+    "testi.q3":"«100 kechalik sinov qarorni osonlashtirdi. Oxir-oqibat barcha buyumlarni saqlab qoldik».",
+    "testi.n3":"Elena Popova","testi.r3":"Uy egasi",
+    "promo.title":"Mavsum yakuni — 30% gacha chegirma","promo.sub":"Tanlangan divanlar, krovatlar va oshxona to'plamlari. Buyurtma berishda kodni kiriting.","promo.code":"Kod:",
+    "promo.days":"Kun","promo.hours":"Soat","promo.mins":"Daqiqa","promo.secs":"Soniya",
+    "about.eyebrow":"Bizning tariximiz","about.title":"Qo'lda yasalgan, uzoq xizmat qiladi","about.years":"Yil",
+    "about.p1":"AURA LUXE kichik duradgorlik ustaxonasida oddiy g'oya bilan boshlangan: mebel xarid emas, meros bo'lishi kerak. Har bir buyum hali ham uyingizga yetib borishidan oldin usta qo'llaridan o'tadi.",
+    "about.p2":"Bugun biz Yevropa va Markaziy Osiyoda 120 dan ortiq hunarmand bilan ishlaymiz, massiv yog'och, tabiiy charm va tabiiy tolalardan foydalanamiz — hech qachon fanera yoki DSP emas.",
+    "about.l1":"Faqat massiv materiallar — MDF yoki laminat yo'q","about.l2":"Kichik partiyada, buyurtma asosida ishlab chiqarish","about.l3":"Har bir buyurtma uchun uglerod-neytral yetkazib berish","about.cta":"Ko'rgazma zalimizga tashrif buyuring",
+    "faq.eyebrow":"Ko'p so'raladigan savollar","faq.title":"Bilishingiz kerak",
+    "faq.q1":"Yetkazib berish qancha vaqt oladi?","faq.a1":"Omborda mavjud buyumlar 2–4 hafta ichida yetib boradi. Buyurtma asosidagilar odatda 6–10 hafta, aniq muddatni buyurtma berishda tasdiqlaymiz.",
+    "faq.q2":"Agar buyum xonamga mos kelmasa, qaytarsam bo'ladimi?","faq.a2":"Ha — har bir buyurtmada 100 kechalik sinov mavjud. Mos kelmasa, bepul olib ketamiz va pulingizni to'liq qaytaramiz.",
+    "faq.q3":"Yig'ib berasizlarmi?","faq.a3":"Barcha yetkazib berishlarga uyda yig'ish va qadoqni olib ketish qo'shimcha to'lovsiz kiradi.",
+    "faq.q4":"Qanday materiallardan foydalanasiz?","faq.a4":"Massiv eman, kul daraxti va yong'oq, tabiiy charm, bukle jun, zig'ir va jilolangan latun furnitura — DSP yoki fanera yo'q.",
+    "faq.q5":"Kafolat bormi?","faq.a5":"Har bir karkas va mexanizm ishlab chiqarish nuqsonlariga qarshi 10 yillik kafolatga ega.",
+    "faq.q6":"Xalqaro yetkazib berasizlarmi?","faq.a6":"Hozircha Yevropa va Markaziy Osiyo bo'ylab yetkazib beramiz, har bir buyurtma uglerod-neytral tashiladi.",
+    "contact.eyebrow":"Biz bilan bog'laning","contact.title":"Tashrif buyuring yoki yozing",
+    "contact.addrT":"Ko'rgazma zali","contact.addrV":"Amir Temur shoh ko'chasi 12, Toshkent, O'zbekiston","contact.phoneT":"Telefon","contact.emailT":"Email",
+    "contact.fName":"To'liq ism","contact.phName":"Ismingiz","contact.errName":"Iltimos, ismingizni kiriting.",
+    "contact.fEmail":"Email","contact.phEmail":"you@email.com","contact.errEmail":"Iltimos, to'g'ri email kiriting.",
+    "contact.fSubject":"Mavzu","contact.phSubject":"Sizga qanday yordam bera olamiz?","contact.errSubject":"Iltimos, mavzuni kiriting.",
+    "contact.fMessage":"Xabar","contact.phMessage":"Xonangiz haqida gapirib bering...","contact.errMessage":"Iltimos, qisqa xabar yozing (kamida 10 belgi).",
+    "contact.send":"Xabar yuborish",
+    "footer.about":"Massiv materiallardan qo'lda yasalgan va o'n yillik kafolat bilan ta'minlangan mebel. O'ylangan uy uchun o'ylangan buyumlar.",
+    "footer.shop":"Do'kon","footer.company":"Kompaniya","footer.aboutLink":"Biz haqimizda","footer.faqLink":"Savollar","footer.contactLink":"Aloqa","footer.galleryLink":"Galereya",
+    "footer.newsletter":"Yangiliklar","footer.newsSub":"Oyiga bir marta yangi mahsulotlar va aksiyalar. Spam yo'q.","footer.newsPh":"Emailingiz","footer.newsBtn":"Obuna bo'lish",
+    "footer.rights":"© 2026 AURA LUXE. Barcha huquqlar himoyalangan.","footer.credit":"Alisher tomonidan kurs loyihasi sifatida ishlab chiqilgan.",
+    "cookie.text":"Savat, sevimlilar va sozlamalaringizni eslab qolish uchun cookie'lardan foydalanamiz. Hech narsa brauzeringizdan chiqmaydi.","cookie.decline":"Rad etish","cookie.accept":"Qabul qilish",
+    "cart.title":"Savatingiz","cart.subtotal":"Oraliq summa","cart.vat":"QQS (12%)","cart.total":"Jami","cart.checkout":"Buyurtma berish","cart.empty":"Savatingiz bo'sh.",
+    "wishlist.title":"Sevimlilar","wishlist.empty":"Sevimlilar ro'yxati bo'sh.",
+    "compare.view":"Solishtirish","compare.clear":"Tozalash","compare.title":"Mahsulotlarni solishtirish","compare.empty":"Solishtirish uchun 3 tagacha mahsulot qo'shing.",
+    "toast.addedCart":"Savatga qo'shildi","toast.removedCart":"Savatdan olib tashlandi","toast.addedWish":"Sevimlilarga qo'shildi","toast.removedWish":"Sevimlilardan olib tashlandi",
+    "toast.compareFull":"Ko'pi bilan 3 ta mahsulotni solishtirish mumkin","toast.messageSent":"Xabar yuborildi — 24 soat ichida javob beramiz","toast.subscribed":"Obuna bo'ldingiz! Pochtangizni tekshiring.",
+    "toast.promoCopied":"Promo-kod nusxalandi","product.addToCart":"Savatga qo'shish","product.quantity":"Miqdor","product.material":"Material","product.dimensions":"O'lchamlari","product.reviews":"sharh"
+  }
+};
+let currentLang = localStorage.getItem('al_lang') || 'en';
+
+/* ---------------------------------------------------------------------
+   2. PRODUCT DATA (40 items, 5 categories x 8)
+--------------------------------------------------------------------- */
+const IMG = {
+  sofa1:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80",
+  sofa2:"https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=700&q=80",
+  sofa3:"https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=700&q=80",
+  sofa4:"https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=700&q=80",
+  chair1:"https://images.unsplash.com/photo-1567016432779-094069958ea5?w=700&q=80",
+  chair2:"https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=700&q=80",
+  chair3:"https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=700&q=80",
+  chair4:"https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=700&q=80",
+  table1:"https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=700&q=80",
+  table2:"https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=700&q=80",
+  table3:"https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80",
+  table4:"https://images.unsplash.com/photo-1592078615290-033ee584e267?w=700&q=80",
+  bed1:"https://images.unsplash.com/photo-1616486338812-3dadaed26bff?w=700&q=80",
+  bed2:"https://images.unsplash.com/photo-1571508601891-ca5e7a713859?w=700&q=80",
+  bed3:"https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=700&q=80",
+  bed4:"https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?w=700&q=80",
+  storage1:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80",
+  storage2:"https://images.unsplash.com/photo-1503602642458-232111445657?w=700&q=80",
+  storage3:"https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=700&q=80",
+  storage4:"https://images.unsplash.com/photo-1550254478-ead40cc54513?w=700&q=80",
+  fallback:"https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=700&q=80"
+};
+
+// helper to build a trilingual description from a template
+function desc(name,adjEn,adjRu,adjUz,matEn,matRu,matUz){
+  return {
+    en:`${name} brings ${adjEn} elegance to any room, crafted from premium ${matEn} with meticulous attention to every detail.`,
+    ru:`${name} привносит ${adjRu} элегантность в любую комнату — изделие из премиального материала «${matRu}», выполненное с вниманием к каждой детали.`,
+    uz:`${name} har qanday xonaga ${adjUz} nafislik baxsh etadi — yuqori sifatli ${matUz} dan ishlangan va har bir detalga alohida e'tibor qaratilgan.`
+  };
+}
+
+const rawProducts = [
+  // ---- SOFAS ----
+  {id:1,cat:"Sofas",name:{en:"Nordic Oak Sofa",ru:"Диван Nordic Oak",uz:"Nordic Oak divani"},material:{en:"Boucle Wool & Oak",ru:"Шерсть букле и дуб",uz:"Bukle jun va eman"},dims:"220 × 95 × 82 cm",price:1890,discount:15,rating:4.8,reviews:214,img:IMG.sofa1,tags:["bestseller"]},
+  {id:2,cat:"Sofas",name:{en:"Milano Leather Sofa",ru:"Диван Milano Leather",uz:"Milano Leather divani"},material:{en:"Full-Grain Leather",ru:"Кожа растительного дубления",uz:"Tabiiy charm"},dims:"235 × 98 × 85 cm",price:2190,discount:0,rating:4.9,reviews:301,img:IMG.sofa1,tags:["bestseller"]},
+  {id:3,cat:"Sofas",name:{en:"Copenhagen Corner Sofa",ru:"Угловой диван Copenhagen",uz:"Copenhagen burchak divani"},material:{en:"Linen Blend",ru:"Смесовый лён",uz:"Aralash zig'ir"},dims:"280 × 165 × 80 cm",price:2650,discount:10,rating:4.7,reviews:98,img:IMG.sofa2,tags:["new"]},
+  {id:4,cat:"Sofas",name:{en:"Kyoto Minimalist Sofa",ru:"Диван Kyoto Minimalist",uz:"Kyoto Minimalist divani"},material:{en:"Velvet",ru:"Бархат",uz:"Baxmal"},dims:"210 × 90 × 78 cm",price:1590,discount:0,rating:4.6,reviews:67,img:IMG.sofa3,tags:[]},
+  {id:5,cat:"Sofas",name:{en:"Brooklyn Chesterfield Sofa",ru:"Диван Brooklyn Chesterfield",uz:"Brooklyn Chesterfield divani"},material:{en:"Leather",ru:"Кожа",uz:"Charm"},dims:"225 × 92 × 80 cm",price:2340,discount:0,rating:4.8,reviews:154,img:IMG.sofa4,tags:["bestseller"]},
+  {id:6,cat:"Sofas",name:{en:"Aria Modular Sofa",ru:"Модульный диван Aria",uz:"Aria modulli divani"},material:{en:"Boucle",ru:"Букле",uz:"Bukle"},dims:"300 × 180 × 76 cm",price:2980,discount:20,rating:4.7,reviews:45,img:IMG.sofa2,tags:["new"]},
+  {id:7,cat:"Sofas",name:{en:"Oslo Loveseat",ru:"Диван-лавсит Oslo",uz:"Oslo lavsit divani"},material:{en:"Linen",ru:"Лён",uz:"Zig'ir"},dims:"165 × 88 × 80 cm",price:1190,discount:0,rating:4.5,reviews:73,img:IMG.sofa3,tags:[]},
+  {id:8,cat:"Sofas",name:{en:"Venice Sofa Bed",ru:"Диван-кровать Venice",uz:"Venice divan-krovati"},material:{en:"Chenille",ru:"Шенилл",uz:"Shenil"},dims:"205 × 95 × 84 cm",price:1750,discount:12,rating:4.4,reviews:52,img:IMG.sofa4,tags:[]},
+  // ---- CHAIRS ----
+  {id:9,cat:"Chairs",name:{en:"Eames-Inspired Lounge Chair",ru:"Кресло Eames-Inspired Lounge",uz:"Eames-Inspired Lounge kreslosi"},material:{en:"Walnut & Leather",ru:"Орех и кожа",uz:"Yong'oq va charm"},dims:"84 × 89 × 84 cm",price:980,discount:0,rating:4.9,reviews:412,img:IMG.chair1,tags:["bestseller"]},
+  {id:10,cat:"Chairs",name:{en:"Bergen Accent Chair",ru:"Кресло Bergen Accent",uz:"Bergen Accent kreslosi"},material:{en:"Velvet",ru:"Бархат",uz:"Baxmal"},dims:"72 × 80 × 90 cm",price:540,discount:10,rating:4.6,reviews:88,img:IMG.chair2,tags:["new"]},
+  {id:11,cat:"Chairs",name:{en:"Helix Swivel Chair",ru:"Кресло Helix Swivel",uz:"Helix aylanuvchi kreslosi"},material:{en:"Boucle",ru:"Букле",uz:"Bukle"},dims:"76 × 78 × 95 cm",price:620,discount:0,rating:4.5,reviews:64,img:IMG.chair3,tags:[]},
+  {id:12,cat:"Chairs",name:{en:"Nova Dining Chair",ru:"Стул Nova Dining",uz:"Nova ovqatxona stuli"},material:{en:"Oak & Linen",ru:"Дуб и лён",uz:"Eman va zig'ir"},dims:"48 × 55 × 82 cm",price:290,discount:0,rating:4.7,reviews:176,img:IMG.chair4,tags:["bestseller"]},
+  {id:13,cat:"Chairs",name:{en:"Zurich Armchair",ru:"Кресло Zurich",uz:"Zurich kreslosi"},material:{en:"Leather",ru:"Кожа",uz:"Charm"},dims:"78 × 84 × 88 cm",price:870,discount:15,rating:4.6,reviews:39,img:IMG.chair1,tags:[]},
+  {id:14,cat:"Chairs",name:{en:"Aspen Rocking Chair",ru:"Кресло-качалка Aspen",uz:"Aspen tebranuvchi kreslosi"},material:{en:"Ash Wood",ru:"Ясень",uz:"Kul daraxti"},dims:"70 × 95 × 100 cm",price:460,discount:0,rating:4.8,reviews:112,img:IMG.chair2,tags:["new"]},
+  {id:15,cat:"Chairs",name:{en:"Luna Office Chair",ru:"Офисное кресло Luna",uz:"Luna ofis kreslosi"},material:{en:"Mesh & Leather",ru:"Сетка и кожа",uz:"To'r va charm"},dims:"64 × 62 × 110 cm",price:390,discount:0,rating:4.3,reviews:203,img:IMG.chair3,tags:[]},
+  {id:16,cat:"Chairs",name:{en:"Willow Rattan Chair",ru:"Кресло Willow Rattan",uz:"Willow Rattan kreslosi"},material:{en:"Natural Rattan",ru:"Натуральный ротанг",uz:"Tabiiy rotang"},dims:"66 × 70 × 84 cm",price:340,discount:5,rating:4.5,reviews:57,img:IMG.chair4,tags:[]},
+  // ---- TABLES ----
+  {id:17,cat:"Tables",name:{en:"Marble Top Coffee Table",ru:"Журнальный столик Marble Top",uz:"Marble Top jurnal stoli"},material:{en:"Marble & Brass",ru:"Мрамор и латунь",uz:"Marmar va latun"},dims:"110 × 60 × 38 cm",price:780,discount:0,rating:4.7,reviews:141,img:IMG.table1,tags:["bestseller"]},
+  {id:18,cat:"Tables",name:{en:"Oak Dining Table",ru:"Обеденный стол Oak",uz:"Oak ovqatxona stoli"},material:{en:"Solid Oak",ru:"Массив дуба",uz:"Massiv eman"},dims:"200 × 95 × 76 cm",price:1490,discount:0,rating:4.9,reviews:267,img:IMG.table2,tags:["bestseller"]},
+  {id:19,cat:"Tables",name:{en:"Brass Side Table",ru:"Приставной столик Brass",uz:"Brass yon stoli"},material:{en:"Brushed Brass",ru:"Матовая латунь",uz:"Jilolangan latun"},dims:"45 × 45 × 55 cm",price:320,discount:0,rating:4.6,reviews:44,img:IMG.table3,tags:["new"]},
+  {id:20,cat:"Tables",name:{en:"Glass Console Table",ru:"Консольный стол Glass",uz:"Glass konsol stoli"},material:{en:"Tempered Glass & Steel",ru:"Закалённое стекло и сталь",uz:"Toblangan shisha va po'lat"},dims:"140 × 38 × 80 cm",price:590,discount:8,rating:4.4,reviews:29,img:IMG.table4,tags:[]},
+  {id:21,cat:"Tables",name:{en:"Walnut Desk",ru:"Письменный стол Walnut",uz:"Walnut ish stoli"},material:{en:"Solid Walnut",ru:"Массив ореха",uz:"Massiv yong'oq"},dims:"130 × 65 × 75 cm",price:920,discount:0,rating:4.7,reviews:88,img:IMG.table1,tags:[]},
+  {id:22,cat:"Tables",name:{en:"Terrazzo Side Table",ru:"Столик Terrazzo",uz:"Terrazzo yon stoli"},material:{en:"Terrazzo Stone",ru:"Терраццо",uz:"Terratso tosh"},dims:"40 × 40 × 50 cm",price:270,discount:0,rating:4.5,reviews:33,img:IMG.table2,tags:[]},
+  {id:23,cat:"Tables",name:{en:"Extendable Dining Table",ru:"Раздвижной обеденный стол",uz:"Cho'ziluvchi ovqatxona stoli"},material:{en:"Oak Veneer-Free Solid Wood",ru:"Массив дерева без шпона",uz:"Faner qo'shilmagan massiv yog'och"},dims:"180–240 × 95 × 76 cm",price:1680,discount:10,rating:4.8,reviews:71,img:IMG.table3,tags:["new"]},
+  {id:24,cat:"Tables",name:{en:"Nesting Coffee Tables (Set of 2)",ru:"Комплект столиков Nesting (2 шт.)",uz:"Nesting stollar to'plami (2 dona)"},material:{en:"Oak & Brass",ru:"Дуб и латунь",uz:"Eman va latun"},dims:"70/50 × 45/40 × 40/35 cm",price:540,discount:0,rating:4.6,reviews:52,img:IMG.table4,tags:[]},
+  // ---- BEDS ----
+  {id:25,cat:"Beds",name:{en:"Upholstered Platform Bed",ru:"Кровать Upholstered Platform",uz:"Upholstered Platform krovati"},material:{en:"Boucle & Oak",ru:"Букле и дуб",uz:"Bukle va eman"},dims:"Queen 160 × 210 × 100 cm",price:1640,discount:0,rating:4.8,reviews:189,img:IMG.bed1,tags:["bestseller"]},
+  {id:26,cat:"Beds",name:{en:"Oak Sleigh Bed",ru:"Кровать Oak Sleigh",uz:"Oak Sleigh krovati"},material:{en:"Solid Oak",ru:"Массив дуба",uz:"Massiv eman"},dims:"King 180 × 220 × 110 cm",price:2100,discount:0,rating:4.9,reviews:97,img:IMG.bed2,tags:[]},
+  {id:27,cat:"Beds",name:{en:"Minimalist Bed Frame",ru:"Минималистичная кровать",uz:"Minimalist krovat ramkasi"},material:{en:"Ash Wood",ru:"Ясень",uz:"Kul daraxti"},dims:"Queen 160 × 210 × 32 cm",price:980,discount:0,rating:4.5,reviews:63,img:IMG.bed3,tags:["new"]},
+  {id:28,cat:"Beds",name:{en:"Velvet Tufted Bed",ru:"Кровать Velvet Tufted",uz:"Velvet Tufted krovati"},material:{en:"Velvet",ru:"Бархат",uz:"Baxmal"},dims:"Queen 160 × 210 × 120 cm",price:1890,discount:18,rating:4.7,reviews:74,img:IMG.bed4,tags:["bestseller"]},
+  {id:29,cat:"Beds",name:{en:"Storage Bed Frame",ru:"Кровать со Storage-ящиками",uz:"Saqlash qutili krovat"},material:{en:"Oak Veneer-Free Wood",ru:"Дерево без шпона",uz:"Faner qo'shilmagan yog'och"},dims:"Queen 160 × 210 × 95 cm",price:1450,discount:0,rating:4.6,reviews:58,img:IMG.bed1,tags:[]},
+  {id:30,cat:"Beds",name:{en:"Canopy Bed",ru:"Кровать с балдахином Canopy",uz:"Canopy baldaxinli krovat"},material:{en:"Solid Ash",ru:"Массив ясеня",uz:"Massiv kul daraxti"},dims:"King 180 × 220 × 200 cm",price:2450,discount:0,rating:4.7,reviews:31,img:IMG.bed2,tags:["new"]},
+  {id:31,cat:"Beds",name:{en:"Adjustable Bed Base",ru:"Регулируемое основание кровати",uz:"Sozlanadigan krovat asosi"},material:{en:"Steel & Linen",ru:"Сталь и лён",uz:"Po'lat va zig'ir"},dims:"Queen 160 × 210 × 40 cm",price:1120,discount:0,rating:4.4,reviews:22,img:IMG.bed3,tags:[]},
+  {id:32,cat:"Beds",name:{en:"Kids Trundle Bed",ru:"Детская кровать с выкатным ящиком",uz:"Bolalar uchun trundle krovat"},material:{en:"Solid Pine",ru:"Массив сосны",uz:"Massiv qarag'ay"},dims:"90 × 200 × 55 cm",price:690,discount:5,rating:4.6,reviews:47,img:IMG.bed4,tags:[]},
+  // ---- STORAGE ----
+  {id:33,cat:"Storage",name:{en:"Oak Sideboard",ru:"Комод Oak Sideboard",uz:"Oak Sideboard komodi"},material:{en:"Solid Oak & Brass",ru:"Массив дуба и латунь",uz:"Massiv eman va latun"},dims:"180 × 45 × 80 cm",price:1290,discount:0,rating:4.8,reviews:132,img:IMG.storage1,tags:["bestseller"]},
+  {id:34,cat:"Storage",name:{en:"Modular Bookshelf",ru:"Модульный стеллаж",uz:"Modulli kitob javoni"},material:{en:"Ash Wood",ru:"Ясень",uz:"Kul daraxti"},dims:"200 × 32 × 190 cm",price:840,discount:0,rating:4.6,reviews:76,img:IMG.storage2,tags:[]},
+  {id:35,cat:"Storage",name:{en:"Brass Shelving Unit",ru:"Стеллаж Brass Shelving",uz:"Brass tokcha bloki"},material:{en:"Brushed Brass & Glass",ru:"Матовая латунь и стекло",uz:"Jilolangan latun va shisha"},dims:"90 × 32 × 180 cm",price:960,discount:12,rating:4.5,reviews:28,img:IMG.storage3,tags:["new"]},
+  {id:36,cat:"Storage",name:{en:"Wardrobe Closet",ru:"Гардеробный шкаф",uz:"Kiyim javoni shkafi"},material:{en:"Solid Walnut",ru:"Массив ореха",uz:"Massiv yong'oq"},dims:"240 × 60 × 210 cm",price:2280,discount:0,rating:4.7,reviews:41,img:IMG.storage4,tags:[]},
+  {id:37,cat:"Storage",name:{en:"TV Media Console",ru:"ТВ-тумба Media Console",uz:"TV media konsoli"},material:{en:"Oak & Steel",ru:"Дуб и сталь",uz:"Eman va po'lat"},dims:"200 × 42 × 50 cm",price:760,discount:0,rating:4.5,reviews:94,img:IMG.storage1,tags:[]},
+  {id:38,cat:"Storage",name:{en:"Rattan Storage Basket Set",ru:"Набор корзин Rattan Storage",uz:"Rattan saqlash savatlari to'plami"},material:{en:"Natural Rattan",ru:"Натуральный ротанг",uz:"Tabiiy rotang"},dims:"Set of 3, 30–45 cm",price:180,discount:0,rating:4.4,reviews:65,img:IMG.storage2,tags:[]},
+  {id:39,cat:"Storage",name:{en:"Shoe Cabinet",ru:"Обувной шкаф",uz:"Poyabzal shkafi"},material:{en:"Solid Ash",ru:"Массив ясеня",uz:"Massiv kul daraxti"},dims:"90 × 32 × 100 cm",price:520,discount:8,rating:4.3,reviews:37,img:IMG.storage3,tags:[]},
+  {id:40,cat:"Storage",name:{en:"Display Cabinet",ru:"Витрина Display Cabinet",uz:"Display vitrina shkafi"},material:{en:"Oak & Tempered Glass",ru:"Дуб и закалённое стекло",uz:"Eman va toblangan shisha"},dims:"110 × 38 × 190 cm",price:1150,discount:0,rating:4.6,reviews:26,img:IMG.storage4,tags:["new"]}
+];
+
+const adjPool = {
+  en:["quiet","warm","effortless","understated","refined","grounded"],
+  ru:["сдержанную","тёплую","естественную","благородную","спокойную","выразительную"],
+  uz:["sokin","iliq","tabiiy","olijanob","xotirjam","nafis"]
+};
+const products = rawProducts.map((p,i)=>{
+  const a = adjPool.en[i%adjPool.en.length], ar = adjPool.ru[i%adjPool.ru.length], au = adjPool.uz[i%adjPool.uz.length];
+  const d = desc(p.name.en,a,ar,au,p.material.en,p.material.ru,p.material.uz);
+  return Object.assign({}, p, {desc:d});
+});
+
+/* ---------------------------------------------------------------------
+   3. STATE (persisted in localStorage)
+--------------------------------------------------------------------- */
+let cart = JSON.parse(localStorage.getItem('al_cart')||'[]');
+let wishlist = JSON.parse(localStorage.getItem('al_wishlist')||'[]');
+let compareList = JSON.parse(localStorage.getItem('al_compare')||'[]');
+let recentlyViewed = JSON.parse(localStorage.getItem('al_recent')||'[]');
+let currentFilter = "All";
+let currentSort = "featured";
+let currentSearch = "";
+let visibleCount = 12;
+
+function saveState(){
+  localStorage.setItem('al_cart', JSON.stringify(cart));
+  localStorage.setItem('al_wishlist', JSON.stringify(wishlist));
+  localStorage.setItem('al_compare', JSON.stringify(compareList));
+  localStorage.setItem('al_recent', JSON.stringify(recentlyViewed));
+}
+function getProduct(id){ return products.find(p=>p.id===id); }
+function localName(p){ return p.name[currentLang] || p.name.en; }
+function localMat(p){ return p.material[currentLang] || p.material.en; }
+function localDesc(p){ return p.desc[currentLang] || p.desc.en; }
+function localCat(cat){ return t('cat.'+cat.toLowerCase()); }
+function priceAfterDiscount(p){ return p.discount ? Math.round(p.price*(1-p.discount/100)) : p.price; }
+function fmt(n){ return '$'+n.toLocaleString('en-US'); }
+
+/* ---------------------------------------------------------------------
+   4. I18N ENGINE
+--------------------------------------------------------------------- */
+function t(key){ return (translations[currentLang] && translations[currentLang][key]) || translations.en[key] || key; }
+
+function applyTranslations(){
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    el.innerHTML = t(key);
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-ph');
+    el.setAttribute('placeholder', t(key));
+  });
+  document.getElementById('currentLangLabel').textContent = currentLang.toUpperCase();
+  document.querySelectorAll('.lang-menu button').forEach(b=>{
+    b.classList.toggle('active', b.getAttribute('data-lang')===currentLang);
+    b.querySelector('i').style.opacity = b.getAttribute('data-lang')===currentLang ? 1 : 0;
+  });
+  // re-render dynamic content that has embedded language-specific text
+  renderAllProductGrids();
+  updateCartUI();
+  updateWishlistUI();
+}
+function setLanguage(lang){
+  currentLang = lang;
+  localStorage.setItem('al_lang', lang);
+  applyTranslations();
+}
+
+/* ---------------------------------------------------------------------
+   5. TOASTS
+--------------------------------------------------------------------- */
+function showToast(message, type){
+  const container = document.getElementById('toast-container');
+  const el = document.createElement('div');
+  el.className = 'toast' + (type==='error' ? ' error' : '');
+  el.innerHTML = `<i class="fa-solid ${type==='error'?'fa-circle-exclamation':'fa-circle-check'}"></i><span class="toast-msg"></span>`;
+  el.querySelector('.toast-msg').textContent = message;
+  container.appendChild(el);
+  setTimeout(()=>{
+    el.classList.add('removing');
+    setTimeout(()=>el.remove(), 350);
+  }, 2600);
+}
+
+/* ---------------------------------------------------------------------
+   6. PRODUCT CARD RENDERING
+--------------------------------------------------------------------- */
+function starHtml(rating){
+  const full = Math.floor(rating);
+  const half = rating - full >= 0.5;
+  let html='';
+  for(let i=0;i<full;i++) html += '<i class="fa-solid fa-star"></i>';
+  if(half) html += '<i class="fa-solid fa-star-half-stroke"></i>';
+  for(let i=full+(half?1:0);i<5;i++) html += '<i class="fa-regular fa-star"></i>';
+  return html;
+}
+function productCardHtml(p){
+  const now = priceAfterDiscount(p);
+  const inWish = wishlist.includes(p.id);
+  const inCompare = compareList.includes(p.id);
+  const badges = [];
+  if(p.tags.includes('new')) badges.push(`<span class="pill pill-new">${t('new.eyebrow')==='New Arrivals'?'New':t('new.eyebrow')}</span>`);
+  if(p.discount) badges.push(`<span class="pill pill-sale">-${p.discount}%</span>`);
+  return `
+  <div class="product-card" data-id="${p.id}">
+    <div class="product-media">
+      <img src="${p.img}" alt="${localName(p)}" loading="lazy" data-open-product="${p.id}" onerror="this.onerror=null;this.src='${IMG.fallback}'">
+      <div class="product-badges">${badges.join('')}</div>
+      <div class="product-quick">
+        <button class="qbtn ${inWish?'active':''}" data-wish-toggle="${p.id}" aria-label="Wishlist"><i class="fa-solid fa-heart"></i></button>
+        <button class="qbtn" data-open-product="${p.id}" aria-label="Quick view"><i class="fa-solid fa-eye"></i></button>
+      </div>
+    </div>
+    <div class="product-body">
+      <div class="product-cat">${localCat(p.cat)}</div>
+      <div class="product-name" data-open-product="${p.id}">${localName(p)}</div>
+      <div class="product-rating"><span class="stars">${starHtml(p.rating)}</span><span>${p.rating} (${p.reviews})</span></div>
+      <div class="product-price-row">
+        <span class="price-now">${fmt(now)}</span>
+        ${p.discount ? `<span class="price-old">${fmt(p.price)}</span>` : ''}
+      </div>
+      <label class="compare-check"><input type="checkbox" data-compare-toggle="${p.id}" ${inCompare?'checked':''}> <span data-i18n="compare.view">${t('compare.view')}</span></label>
+      <button class="add-cart-btn" data-add-cart="${p.id}"><i class="fa-solid fa-bag-shopping"></i> ${t('product.addToCart')}</button>
+    </div>
+  </div>`;
+}
+function renderGrid(container, list){
+  container.innerHTML = list.length ? list.map(productCardHtml).join('') : `<div class="no-results">${currentLang==='ru'?'Ничего не найдено.':currentLang==='uz'?'Hech narsa topilmadi.':'No products found.'}</div>`;
+}
+function getFilteredSorted(){
+  let list = products.filter(p=>{
+    const matchCat = currentFilter==='All' || p.cat===currentFilter;
+    const matchSearch = !currentSearch || localName(p).toLowerCase().includes(currentSearch) || p.name.en.toLowerCase().includes(currentSearch);
+    return matchCat && matchSearch;
+  });
+  if(currentSort==='price-asc') list = list.slice().sort((a,b)=>priceAfterDiscount(a)-priceAfterDiscount(b));
+  else if(currentSort==='price-desc') list = list.slice().sort((a,b)=>priceAfterDiscount(b)-priceAfterDiscount(a));
+  else if(currentSort==='rating') list = list.slice().sort((a,b)=>b.rating-a.rating);
+  return list;
+}
+function renderMainGrid(){
+  const list = getFilteredSorted();
+  renderGrid(document.getElementById('productsGrid'), list.slice(0, visibleCount));
+  document.getElementById('loadMoreBtn').style.display = list.length > visibleCount ? 'inline-flex' : 'none';
+}
+function renderAllProductGrids(){
+  renderGrid(document.getElementById('bestSellersGrid'), products.filter(p=>p.tags.includes('bestseller')).slice(0,4));
+  renderGrid(document.getElementById('newArrivalsGrid'), products.filter(p=>p.tags.includes('new')).slice(0,4));
+  renderMainGrid();
+  renderRecentlyViewed();
+}
+
+/* ---------------------------------------------------------------------
+   7. CART
+--------------------------------------------------------------------- */
+function addToCart(id, qty){
+  qty = qty || 1;
+  const existing = cart.find(c=>c.id===id);
+  if(existing) existing.qty += qty;
+  else cart.push({id, qty});
+  saveState();
+  updateCartUI();
+  showToast(t('toast.addedCart'));
+}
+function updateCartQty(id, delta){
+  const item = cart.find(c=>c.id===id);
+  if(!item) return;
+  item.qty += delta;
+  if(item.qty<=0){ cart = cart.filter(c=>c.id!==id); showToast(t('toast.removedCart')); }
+  saveState();
+  updateCartUI();
+}
+function removeFromCart(id){
+  cart = cart.filter(c=>c.id!==id);
+  saveState(); updateCartUI();
+  showToast(t('toast.removedCart'));
+}
+function updateCartUI(){
+  const countEl = document.getElementById('cartCount');
+  const totalQty = cart.reduce((s,c)=>s+c.qty,0);
+  countEl.textContent = totalQty;
+  countEl.style.display = totalQty>0 ? 'flex' : 'none';
+
+  const body = document.getElementById('cartBody');
+  const foot = document.getElementById('cartFoot');
+  if(cart.length===0){
+    body.innerHTML = `<div class="drawer-empty"><i class="fa-solid fa-bag-shopping"></i><p>${t('cart.empty')}</p></div>`;
+    foot.style.display='none';
+    return;
+  }
+  foot.style.display='block';
+  let subtotal = 0;
+  body.innerHTML = cart.map(c=>{
+    const p = getProduct(c.id);
+    if(!p) return '';
+    const now = priceAfterDiscount(p);
+    subtotal += now*c.qty;
+    return `<div class="cart-item">
+      <img src="${p.img}" alt="${localName(p)}" onerror="this.onerror=null;this.src='${IMG.fallback}'">
+      <div class="cart-item-info">
+        <h5>${localName(p)}</h5>
+        <div class="mat">${localMat(p)}</div>
+        <div class="qty-control">
+          <button data-cart-dec="${p.id}">−</button><span>${c.qty}</span><button data-cart-inc="${p.id}">+</button>
+        </div>
+      </div>
+      <div class="cart-item-right">
+        <div class="price">${fmt(now*c.qty)}</div>
+        <button class="remove-item" data-cart-remove="${p.id}"><i class="fa-solid fa-trash"></i></button>
+      </div>
+    </div>`;
+  }).join('');
+  const vat = Math.round(subtotal*0.12);
+  document.getElementById('cartSubtotal').textContent = fmt(subtotal);
+  document.getElementById('cartVat').textContent = fmt(vat);
+  document.getElementById('cartTotal').textContent = fmt(subtotal+vat);
+}
+
+/* ---------------------------------------------------------------------
+   8. WISHLIST
+--------------------------------------------------------------------- */
+function toggleWishlist(id){
+  if(wishlist.includes(id)){
+    wishlist = wishlist.filter(w=>w!==id);
+    showToast(t('toast.removedWish'));
+  } else {
+    wishlist.push(id);
+    showToast(t('toast.addedWish'));
+  }
+  saveState();
+  updateWishlistUI();
+  renderAllProductGrids();
+}
+function updateWishlistUI(){
+  const countEl = document.getElementById('wishlistCount');
+  countEl.textContent = wishlist.length;
+  countEl.style.display = wishlist.length>0 ? 'flex':'none';
+  const body = document.getElementById('wishlistBody');
+  if(wishlist.length===0){
+    body.innerHTML = `<div class="drawer-empty"><i class="fa-solid fa-heart"></i><p>${t('wishlist.empty')}</p></div>`;
+    return;
+  }
+  body.innerHTML = wishlist.map(id=>{
+    const p = getProduct(id);
+    if(!p) return '';
+    return `<div class="wishlist-item">
+      <img src="${p.img}" alt="${localName(p)}" onerror="this.onerror=null;this.src='${IMG.fallback}'">
+      <div class="wishlist-item-info"><h5>${localName(p)}</h5><div class="price-now">${fmt(priceAfterDiscount(p))}</div></div>
+      <button class="qbtn" data-add-cart="${p.id}"><i class="fa-solid fa-bag-shopping"></i></button>
+      <button class="remove-item" data-wish-toggle="${p.id}"><i class="fa-solid fa-trash"></i></button>
+    </div>`;
+  }).join('');
+}
+
+/* ---------------------------------------------------------------------
+   9. COMPARE
+--------------------------------------------------------------------- */
+function toggleCompare(id){
+  if(compareList.includes(id)){
+    compareList = compareList.filter(c=>c!==id);
+  } else {
+    if(compareList.length>=3){ showToast(t('toast.compareFull'),'error'); renderAllProductGrids(); return; }
+    compareList.push(id);
+  }
+  saveState();
+  updateCompareBar();
+  renderAllProductGrids();
+}
+function updateCompareBar(){
+  const bar = document.getElementById('compare-bar');
+  const thumbs = document.getElementById('compareThumbs');
+  if(compareList.length===0){ bar.classList.remove('show'); return; }
+  bar.classList.add('show');
+  thumbs.innerHTML = compareList.map(id=>{
+    const p = getProduct(id);
+    return p ? `<img src="${p.img}" alt="${localName(p)}" onerror="this.onerror=null;this.src='${IMG.fallback}'">` : '';
+  }).join('') + `<span style="font-size:.86rem;margin-left:6px">${compareList.length}/3</span>`;
+}
+function openCompareModal(){
+  const table = document.getElementById('compareTable');
+  if(compareList.length===0){
+    table.innerHTML = `<tr><td style="padding:20px;color:var(--text-secondary)">${t('compare.empty')}</td></tr>`;
+  } else {
+    const ps = compareList.map(getProduct).filter(Boolean);
+    const rows = [
+      {label:t('cat.sofas')==='Sofas'?'Product':t('products.title'), render:p=>`<img src="${p.img}" onerror="this.onerror=null;this.src='${IMG.fallback}'"><div>${localName(p)}</div><span class="compare-remove" data-compare-remove="${p.id}">${currentLang==='ru'?'Убрать':currentLang==='uz'?'Olib tashlash':'Remove'}</span>`},
+      {label:t('product.material'), render:p=>localMat(p)},
+      {label:t('product.dimensions'), render:p=>p.dims},
+      {label:t('products.title')==='All furniture'?'Price':t('cart.total'), render:p=>fmt(priceAfterDiscount(p))},
+      {label:t('sort.rating'), render:p=>`${p.rating} ★ (${p.reviews})`},
+    ];
+    table.innerHTML = rows.map(r=>`<tr><th>${r.label}</th>${ps.map(p=>`<td>${r.render(p)}</td>`).join('')}</tr>`).join('');
+  }
+  openModal('compareModalBg');
+}
+
+/* ---------------------------------------------------------------------
+   10. RECENTLY VIEWED
+--------------------------------------------------------------------- */
+function trackRecentlyViewed(id){
+  recentlyViewed = recentlyViewed.filter(r=>r!==id);
+  recentlyViewed.unshift(id);
+  recentlyViewed = recentlyViewed.slice(0,4);
+  saveState();
+  renderRecentlyViewed();
+}
+function renderRecentlyViewed(){
+  const section = document.getElementById('recentlyViewedSection');
+  if(recentlyViewed.length===0){ section.style.display='none'; return; }
+  section.style.display='block';
+  renderGrid(document.getElementById('recentGrid'), recentlyViewed.map(getProduct).filter(Boolean));
+}
+
+/* ---------------------------------------------------------------------
+   11. PRODUCT MODAL
+--------------------------------------------------------------------- */
+let modalQty = 1;
+function openProductModal(id){
+  const p = getProduct(id);
+  if(!p) return;
+  trackRecentlyViewed(id);
+  modalQty = 1;
+  const now = priceAfterDiscount(p);
+  document.getElementById('productModalContent').innerHTML = `
+    <div class="pm-media"><img src="${p.img}" alt="${localName(p)}" onerror="this.onerror=null;this.src='${IMG.fallback}'"></div>
+    <div class="pm-info">
+      <div class="product-cat">${localCat(p.cat)}</div>
+      <h2>${localName(p)}</h2>
+      <div class="product-rating"><span class="stars">${starHtml(p.rating)}</span><span>${p.rating} (${p.reviews} ${t('product.reviews')})</span></div>
+      <p class="desc">${localDesc(p)}</p>
+      <div class="pm-specs">
+        <div class="pm-spec"><span>${t('product.material')}</span>${localMat(p)}</div>
+        <div class="pm-spec"><span>${t('product.dimensions')}</span>${p.dims}</div>
+      </div>
+      <div class="pm-price-row">
+        <span class="price-now">${fmt(now)}</span>
+        ${p.discount ? `<span class="price-old">${fmt(p.price)}</span><span class="pill pill-sale">-${p.discount}%</span>` : ''}
+      </div>
+      <div class="pm-actions">
+        <div class="pm-qty">
+          <button id="pmQtyDec">−</button><span id="pmQtyVal">1</span><button id="pmQtyInc">+</button>
+        </div>
+        <button class="btn btn-primary" id="pmAddCart" style="flex:1"><i class="fa-solid fa-bag-shopping"></i> ${t('product.addToCart')}</button>
+        <button class="qbtn ${wishlist.includes(p.id)?'active':''}" id="pmWishBtn" style="width:48px;height:48px;border:1px solid var(--border)"><i class="fa-solid fa-heart"></i></button>
+      </div>
+    </div>
+  `;
+  document.getElementById('pmQtyDec').addEventListener('click',()=>{ if(modalQty>1){modalQty--; document.getElementById('pmQtyVal').textContent=modalQty;} });
+  document.getElementById('pmQtyInc').addEventListener('click',()=>{ modalQty++; document.getElementById('pmQtyVal').textContent=modalQty; });
+  document.getElementById('pmAddCart').addEventListener('click',()=>{ addToCart(p.id, modalQty); });
+  document.getElementById('pmWishBtn').addEventListener('click',()=>{ toggleWishlist(p.id); document.getElementById('pmWishBtn').classList.toggle('active'); });
+  openModal('productModalBg');
+}
+
+/* ---------------------------------------------------------------------
+   12. MODAL / DRAWER HELPERS
+--------------------------------------------------------------------- */
+function openModal(id){ document.getElementById(id).classList.add('show'); document.body.style.overflow='hidden'; }
+function closeModal(id){ document.getElementById(id).classList.remove('show'); document.body.style.overflow=''; }
+function openDrawer(id){
+  document.getElementById(id).classList.add('show');
+  document.getElementById('overlayBg').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeDrawers(){
+  document.querySelectorAll('.drawer').forEach(d=>d.classList.remove('show'));
+  document.getElementById('overlayBg').classList.remove('show');
+  document.body.style.overflow='';
+}
+
+/* ---------------------------------------------------------------------
+   13. EVENT DELEGATION (product actions)
+--------------------------------------------------------------------- */
+document.addEventListener('click', function(e){
+  const openBtn = e.target.closest('[data-open-product]');
+  if(openBtn){ openProductModal(parseInt(openBtn.getAttribute('data-open-product'))); return; }
+
+  const wishBtn = e.target.closest('[data-wish-toggle]');
+  if(wishBtn){ toggleWishlist(parseInt(wishBtn.getAttribute('data-wish-toggle'))); return; }
+
+  const addBtn = e.target.closest('[data-add-cart]');
+  if(addBtn){ addToCart(parseInt(addBtn.getAttribute('data-add-cart')),1); return; }
+
+  const cInc = e.target.closest('[data-cart-inc]');
+  if(cInc){ updateCartQty(parseInt(cInc.getAttribute('data-cart-inc')),1); return; }
+  const cDec = e.target.closest('[data-cart-dec]');
+  if(cDec){ updateCartQty(parseInt(cDec.getAttribute('data-cart-dec')),-1); return; }
+  const cRem = e.target.closest('[data-cart-remove]');
+  if(cRem){ removeFromCart(parseInt(cRem.getAttribute('data-cart-remove'))); return; }
+
+  const compRem = e.target.closest('[data-compare-remove]');
+  if(compRem){ toggleCompare(parseInt(compRem.getAttribute('data-compare-remove'))); openCompareModal(); return; }
+
+  const collCard = e.target.closest('.collection-card');
+  if(collCard){
+    currentFilter = collCard.getAttribute('data-filter');
+    document.querySelectorAll('.filter-chip').forEach(c=>c.classList.toggle('active', c.getAttribute('data-cat')===currentFilter));
+    renderMainGrid();
+    document.getElementById('products').scrollIntoView({behavior:'smooth'});
+    return;
+  }
+  const catCard = e.target.closest('.cat-card');
+  if(catCard){
+    currentFilter = catCard.getAttribute('data-cat');
+    document.querySelectorAll('.filter-chip').forEach(c=>c.classList.toggle('active', c.getAttribute('data-cat')===currentFilter));
+    renderMainGrid();
+    document.getElementById('products').scrollIntoView({behavior:'smooth'});
+    return;
+  }
+});
+document.addEventListener('change', function(e){
+  const compChk = e.target.closest('[data-compare-toggle]');
+  if(compChk){ toggleCompare(parseInt(compChk.getAttribute('data-compare-toggle'))); return; }
+});
+
+/* ---------------------------------------------------------------------
+   14. FILTER CHIPS / SEARCH / SORT
+--------------------------------------------------------------------- */
+document.getElementById('filterChips').addEventListener('click', function(e){
+  const chip = e.target.closest('.filter-chip');
+  if(!chip) return;
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  chip.classList.add('active');
+  currentFilter = chip.getAttribute('data-cat');
+  visibleCount = 12;
+  renderMainGrid();
+});
+let searchDebounce;
+document.getElementById('searchInput').addEventListener('input', function(e){
+  clearTimeout(searchDebounce);
+  searchDebounce = setTimeout(()=>{
+    currentSearch = e.target.value.trim().toLowerCase();
+    visibleCount = 12;
+    renderMainGrid();
+  },220);
+});
+document.getElementById('sortSelect').addEventListener('change', function(e){
+  currentSort = e.target.value;
+  renderMainGrid();
+});
+document.getElementById('loadMoreBtn').addEventListener('click', function(){
+  visibleCount += 8;
+  renderMainGrid();
+});
+
+/* ---------------------------------------------------------------------
+   15. NAVBAR: language, theme, drawers, scroll state
+--------------------------------------------------------------------- */
+const langSwitch = document.getElementById('langSwitch');
+document.getElementById('langBtn').addEventListener('click', function(e){
+  e.stopPropagation();
+  langSwitch.classList.toggle('open');
+});
+document.querySelectorAll('.lang-menu button').forEach(btn=>{
+  btn.addEventListener('click', function(){
+    setLanguage(this.getAttribute('data-lang'));
+    langSwitch.classList.remove('open');
+  });
+});
+document.addEventListener('click', function(){ langSwitch.classList.remove('open'); });
+
+document.getElementById('themeToggle').addEventListener('click', function(){
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme')==='dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('al_theme', isDark ? 'light':'dark');
+});
+
+document.getElementById('cartBtn').addEventListener('click', ()=>openDrawer('cartDrawer'));
+document.getElementById('wishlistBtn').addEventListener('click', ()=>openDrawer('wishlistDrawer'));
+document.getElementById('overlayBg').addEventListener('click', closeDrawers);
+document.querySelectorAll('[data-close-drawer]').forEach(b=>b.addEventListener('click', closeDrawers));
+document.querySelectorAll('[data-close-modal]').forEach(b=>b.addEventListener('click', function(){ closeModal(this.getAttribute('data-close-modal')); }));
+document.querySelectorAll('.modal-bg').forEach(m=>m.addEventListener('click', function(e){ if(e.target===this) closeModal(this.id); }));
+const checkoutMsg = {en:'Checkout is a demo — thank you for browsing!', ru:'Оформление заказа — демо-версия. Спасибо за визит!', uz:'Buyurtma berish — demo rejim. Tashrifingiz uchun rahmat!'};
+document.getElementById('checkoutBtn').addEventListener('click', function(){
+  showToast(checkoutMsg[currentLang] || checkoutMsg.en);
+});
+
+window.addEventListener('scroll', function(){
+  document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY>30);
+  document.getElementById('back-to-top').classList.toggle('show', window.scrollY>500);
+});
+document.getElementById('back-to-top').addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ---------------------------------------------------------------------
+   16. COMPARE BAR BUTTONS
+--------------------------------------------------------------------- */
+document.getElementById('compareViewBtn').addEventListener('click', openCompareModal);
+document.getElementById('compareClearBtn').addEventListener('click', function(){
+  compareList = []; saveState(); updateCompareBar(); renderAllProductGrids();
+});
+
+/* ---------------------------------------------------------------------
+   17. HERO SLIDER
+--------------------------------------------------------------------- */
+let heroIndex = 0;
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroDots = document.querySelectorAll('.hero-dots button');
+function showHeroSlide(i){
+  heroSlides.forEach((s,idx)=>s.classList.toggle('active', idx===i));
+  heroDots.forEach((d,idx)=>d.classList.toggle('active', idx===i));
+  heroIndex = i;
+}
+heroDots.forEach(d=>d.addEventListener('click', function(){ showHeroSlide(parseInt(this.getAttribute('data-i'))); }));
+setInterval(()=>{ showHeroSlide((heroIndex+1)%heroSlides.length); }, 5000);
+
+/* ---------------------------------------------------------------------
+   18. GALLERY LIGHTBOX
+--------------------------------------------------------------------- */
+const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+let lightboxIndex = 0;
+function openLightbox(i){
+  lightboxIndex = i;
+  document.getElementById('lightboxImg').src = galleryItems[i].getAttribute('data-full');
+  openModal('lightboxBg');
+}
+galleryItems.forEach((item,i)=>item.addEventListener('click', ()=>openLightbox(i)));
+document.getElementById('lightboxClose').addEventListener('click', ()=>closeModal('lightboxBg'));
+document.getElementById('lightboxBg').addEventListener('click', function(e){ if(e.target===this) closeModal('lightboxBg'); });
+document.getElementById('lightboxNext').addEventListener('click', ()=>openLightbox((lightboxIndex+1)%galleryItems.length));
+document.getElementById('lightboxPrev').addEventListener('click', ()=>openLightbox((lightboxIndex-1+galleryItems.length)%galleryItems.length));
+
+/* ---------------------------------------------------------------------
+   19. FAQ ACCORDION
+--------------------------------------------------------------------- */
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click', function(){
+    const item = this.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!wasOpen){
+      item.classList.add('open');
+      const a = item.querySelector('.faq-a');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+// initialize first FAQ open state height
+window.addEventListener('load', function(){
+  const openItem = document.querySelector('.faq-item.open .faq-a');
+  if(openItem) openItem.style.maxHeight = openItem.scrollHeight + 'px';
+});
+
+/* ---------------------------------------------------------------------
+   20. TESTIMONIALS CAROUSEL
+--------------------------------------------------------------------- */
+let testiIndex = 0;
+const testiSlides = document.querySelectorAll('.testi-slide');
+function showTesti(i){ testiSlides.forEach((s,idx)=>s.classList.toggle('active', idx===i)); testiIndex=i; }
+document.getElementById('testiNext').addEventListener('click', ()=>showTesti((testiIndex+1)%testiSlides.length));
+document.getElementById('testiPrev').addEventListener('click', ()=>showTesti((testiIndex-1+testiSlides.length)%testiSlides.length));
+setInterval(()=>showTesti((testiIndex+1)%testiSlides.length), 7000);
+
+/* ---------------------------------------------------------------------
+   21. STATISTICS COUNTER
+--------------------------------------------------------------------- */
+let statsAnimated = false;
+function animateStats(){
+  if(statsAnimated) return;
+  statsAnimated = true;
+  document.querySelectorAll('.stat-num').forEach(el=>{
+    const target = parseInt(el.getAttribute('data-target'));
+    let current = 0;
+    const step = Math.max(1, Math.round(target/60));
+    const timer = setInterval(()=>{
+      current += step;
+      if(current>=target){ current = target; clearInterval(timer); }
+      el.textContent = current.toLocaleString('en-US');
+    }, 22);
+  });
+}
+
+/* ---------------------------------------------------------------------
+   22. PROMOTIONS COUNTDOWN
+--------------------------------------------------------------------- */
+const promoEnd = new Date(Date.now() + (4*24*3600 + 13*3600 + 22*60)*1000);
+function updatePromoTimer(){
+  const diff = promoEnd - new Date();
+  if(diff<=0){ document.getElementById('promoTimer').style.display='none'; return; }
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff/(1000*60*60))%24);
+  const m = Math.floor((diff/(1000*60))%60);
+  const s = Math.floor((diff/1000)%60);
+  document.getElementById('tDays').textContent = String(d).padStart(2,'0');
+  document.getElementById('tHours').textContent = String(h).padStart(2,'0');
+  document.getElementById('tMins').textContent = String(m).padStart(2,'0');
+  document.getElementById('tSecs').textContent = String(s).padStart(2,'0');
+}
+setInterval(updatePromoTimer, 1000);
+document.getElementById('copyPromoBtn').addEventListener('click', function(){
+  navigator.clipboard && navigator.clipboard.writeText('AURA30').catch(()=>{});
+  showToast(t('toast.promoCopied'));
+});
+
+/* ---------------------------------------------------------------------
+   23. SCROLL REVEAL
+--------------------------------------------------------------------- */
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      if(entry.target.id==='stats' || entry.target.closest('#stats')) animateStats();
+    }
+  });
+},{threshold:0.15});
+document.querySelectorAll('.reveal, .reveal-scale').forEach(el=>revealObserver.observe(el));
+const statsSection = document.getElementById('stats');
+if(statsSection) revealObserver.observe(statsSection);
+
+/* ---------------------------------------------------------------------
+   24. CONTACT FORM VALIDATION
+--------------------------------------------------------------------- */
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  let valid = true;
+  const name = document.getElementById('cf-name');
+  const email = document.getElementById('cf-email');
+  const subject = document.getElementById('cf-subject');
+  const message = document.getElementById('cf-message');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setError(input, hasError){
+    input.closest('.form-group').classList.toggle('error', hasError);
+    if(hasError) valid = false;
+  }
+  setError(name, name.value.trim().length===0);
+  setError(email, !emailRegex.test(email.value.trim()));
+  setError(subject, subject.value.trim().length===0);
+  setError(message, message.value.trim().length<10);
+
+  if(valid){
+    showToast(t('toast.messageSent'));
+    this.reset();
+    document.querySelectorAll('.form-group').forEach(g=>g.classList.remove('error'));
+  }
+});
+document.getElementById('newsletterForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const input = document.getElementById('newsletterEmail');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(emailRegex.test(input.value.trim())){
+    showToast(t('toast.subscribed'));
+    this.reset();
+  } else {
+    showToast(t('contact.errEmail'), 'error');
+  }
+});
+
+/* ---------------------------------------------------------------------
+   25. COOKIE CONSENT
+--------------------------------------------------------------------- */
+const cookieBanner = document.getElementById('cookie-banner');
+if(!localStorage.getItem('al_cookie_choice')){
+  setTimeout(()=>cookieBanner.classList.add('show'), 1200);
+}
+document.getElementById('cookieAccept').addEventListener('click', function(){
+  localStorage.setItem('al_cookie_choice','accepted');
+  cookieBanner.classList.remove('show');
+});
+document.getElementById('cookieDecline').addEventListener('click', function(){
+  localStorage.setItem('al_cookie_choice','declined');
+  cookieBanner.classList.remove('show');
+});
+
+/* ---------------------------------------------------------------------
+   26. CUSTOM CURSOR (desktop, pointer:fine only)
+--------------------------------------------------------------------- */
+if(window.matchMedia('(pointer:fine)').matches){
+  const dot = document.getElementById('cursorDot');
+  document.addEventListener('mousemove', e=>{
+    dot.style.left = e.clientX+'px';
+    dot.style.top = e.clientY+'px';
+  });
+  document.addEventListener('mouseover', e=>{
+    if(e.target.closest('a, button, .product-card, .cat-card, .collection-card, .gallery-item')) dot.classList.add('grow');
+  });
+  document.addEventListener('mouseout', e=>{
+    if(e.target.closest('a, button, .product-card, .cat-card, .collection-card, .gallery-item')) dot.classList.remove('grow');
+  });
+} else {
+  document.getElementById('cursorDot').style.display='none';
+}
+
+/* ---------------------------------------------------------------------
+   27. INIT
+--------------------------------------------------------------------- */
+function init(){
+  // theme
+  const savedTheme = localStorage.getItem('al_theme');
+  if(savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+  // category counts (static, all 8) — kept for clarity, already in HTML
+  applyTranslations();
+  updateCompareBar();
+  // loading screen
+  window.addEventListener('load', function(){
+    setTimeout(()=>document.getElementById('loading-screen').classList.add('hide'), 500);
+  });
+  setTimeout(()=>document.getElementById('loading-screen').classList.add('hide'), 2200);
+}
+init();
+
+})();
+</script>
+</body>
+</html>
