@@ -1,0 +1,132 @@
+main{
+  display: flex;
+  justify-content: center;
+  margin-left: -150px;
+  gap: 100px;
+}
+
+
+
+.bir{
+    border: 4px solid black;
+    width: 300px;
+    height: 710px;
+    border-radius: 15px;
+
+}
+.tepa-rang{
+    background-color: #6E223C;
+    width: 100%;
+    height: 120px;
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+}
+.rasm{
+padding-left: 30px;
+margin-top: -110px;
+
+}
+h1{
+    color: #0E7678;
+    font-size: 40px;
+    padding-left: 10px;
+}
+.past-rang{
+    background-color: #008180;
+    width: 95%;
+    height: 35px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: 7px;;
+    margin-top: -7px;
+    
+}
+.harf{
+    padding-left: 100px;
+    margin-top: -26px;
+    font-size: 17px;
+}
+
+.bir-2{
+    border: 4px solid black;
+    width: 300px;
+    height: 710px;
+    border-radius: 15px;
+
+}
+.tepa-rang-2{
+    background-color: #048281;
+    width: 100%;
+    height: 120px;
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+}
+.rasm-2{
+padding-left: 30px;
+margin-top: -110px;
+
+}
+h1{
+    color: #0E7678;
+    font-size: 40px;
+    padding-left: 10px;
+}
+.past-rang-2{
+    background-color: #008180;
+    width: 95%;
+    height: 35px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: 7px;;
+    margin-top: -7px;
+    
+}
+.harf-2{
+    padding-left: 100px;
+    margin-top: -26px;
+    font-size: 17px;
+}
+.jami{
+
+    padding-left: 400px;
+    margin-top: -718px;
+ 
+.bir-3{
+    border: 4px solid black;
+    width: 300px;
+    height: 710px;
+    border-radius: 15px;
+    margin-right: -50px;
+}
+.tepa-rang-3{
+    background-color: #23C206;
+    width: 100%;
+    height: 120px;
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+}
+.rasm-3{
+padding-left: 30px;
+margin-top: -110px;
+
+}
+h1{
+    color: #0E7678;
+    font-size: 40px;
+    padding-left: 10px;
+}
+.past-rang-3{
+    background-color: #008180;
+    width: 95%;
+    height: 35px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left: 7px;;
+    margin-top: -7px;
+    
+}
+.harf-3{
+    padding-left: 100px;
+    margin-top: -26px;
+    font-size: 17px;
+}}
