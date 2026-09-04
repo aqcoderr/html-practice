@@ -6,7 +6,7 @@
 }
 body{
     background-color: #3F5B69;
-    
+    background: linear-gradient(to left, #2a3c46, #658ea2);
     text-align: center;
 }
 .cards{
