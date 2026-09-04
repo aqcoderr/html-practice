@@ -1,0 +1,94 @@
+*{margin: 0; 
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif; transition: all 0.3s ease;
+  
+}
+body{
+  background-color: #2D3B48;
+}
+.cards{
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 150px;
+  
+}
+.im1{
+  background-image: url(./image1/images\ \(9\).jfif);
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 300px;
+  box-shadow: 0 5px 15px black;
+}
+.h2{
+  color: white;
+  text-align: center;
+  padding-top: 310px;
+}
+
+.im2{
+  background-image: url(./image1/i.jpg);
+  height: 400px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 5px 15px black;
+}
+.h21{
+  color: white;
+  text-align: center;
+  padding-top: 310px;
+}
+.im3{
+  background-image:url(./image1/images\ \(10\).jpg);
+  height: 400px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  
+}
+.h22{
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+}
+.p1{
+  font-family:"playfair display",serif;
+  font-style:italic;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.button{
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px;
+  border: 1px dashed yellow;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 5px 15px black;
+}
+.button:hover{
+  box-shadow: 0 5px 15px black;
+  padding: 10px 10px;
+  background:none;
+}
+.im4{
+  background-image: url(./image1/images\ \(11\).jpg);
+  height: 400px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+.h23{
+  color: white;
+  text-align: center;
+  padding-top: 310px;
+}

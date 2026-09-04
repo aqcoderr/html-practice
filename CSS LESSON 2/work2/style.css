@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif; transition: all 0.3s ease;
+}
+body{
+    background-color: #3F5B69;
+    
+    text-align: center;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding-top: 130px;
+}
+.im1{
+    background-image: url(./image2/photo_2026-09-04_06-33-22.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 450px;
+    width: 260px;
+    box-shadow: 0 5px 20px black;
+}
+.brand{
+    font-style: italic;
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    padding-top: 70px;
+}
+.btns{
+    background-color: white;
+    color: #0B3153;
+    font-weight: bold;
+    padding: 9px 30px;
+    display: inline-block;
+    margin-top: 105px;
+    border-radius: 2px;
+    box-shadow: 0 3px 20px black;
+}
+.btns:hover{
+    border: 0.8px solid #005D9C;
+    background: none;
+    color: white;
+    box-shadow: 0 3px 20px black;
+}
+.btnl{
+    border: 1px solid white;
+    background: none;
+    color: white;
+    font-weight: bold;
+    width: 127px;
+    height: 35px;
+    border-radius: 2px;
+    text-align: center;
+    margin-left: 66px;
+    padding-top: 8px;
+    margin-top: 20px;
+    box-shadow: 0 3px 20px black;
+}
+.btnl:hover{
+    border: 0.8px solid #005D9C;
+    background: white;
+    color: black;
+    box-shadow: 0 3px 20px black;
+}
+.soat{
+    padding-top: 80px;
+    color: white;
+    font-size: 23px;
+}
+.kun{
+    padding-top: 10px;
+    color: white;
+    font-size: 10px;
+}
+
+
+.hr{
+    width: 165px;
+    margin: 0 auto;
+}
+
+.im2{
+    background-image: url(./image2/photo_2026-09-04_06-33-22.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 450px;
+    width: 260px;
+    box-shadow: 0 5px 20px black;
+}
+.email1{
+    color: white;
+    padding-top: 90px;
+    font-size: 9px;
+    font-weight: bold;
+    padding-right: 130px;
+    padding-bottom: 4px;
+}
+.pass1{
+    color: white;
+    padding-top: 20px;
+    padding-right: 105px;
+    font-size: 9px;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+.btnl2{
+    background-color: white;
+    color: #0B3153;
+    font-weight: bold;
+    padding: 9px 58px;
+    display: inline-block;
+    margin-top: 30px;
+    border-radius: 2px;
+    box-shadow: 0 3px 20px black;
+}
+.btnl2:hover{
+    border: 0.8px solid #005D9C;
+    background: none;
+    color: black;
+    box-shadow: 0 3px 20px black;
+}
+.forgot{
+    color: white;
+    padding-top: 25px;
+    font-size: 9px;
+    font-weight: bold;
+
+}
+.hr1{
+    width: 70px;
+    margin-top: 20px;
+    margin-left: 47px;
+
+}
+.hr2{
+    margin-top: -2px;
+    margin-left: 143px;
+    width: 70px;
+}
+.or{
+    color: white;
+    font-size: 11px;
+    margin-top: -6px;
+}
+.btnf{
+    background-color: #415EAE;
+    color: #0B3153;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 2px;
+    text-align: center;
+    box-shadow: 0 5px 20px black;
+}
+.btnf:hover{
+    border: 0.8px solid #005D9C;
+    background: none;
+    color: black;
+    box-shadow: 0 5px 20px black;
+}
+.flogo{
+    background-image: url(./image2/images\ \(15\).jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 15px;
+    width: 16px;
+    margin-bottom: -10px;
+}
+.log{
+    margin-top: -10px;
+   margin-left: 25px;
+    color: white;
+    font-size: 9px;
+}
+
+.im3{
+     background-image: url(./image2/photo_2026-09-04_06-33-22.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 450px;
+    width: 260px;
+    box-shadow: 0 5px 20px black;
+}
+.name{
+    color: white;
+    padding-top: 91px;
+    font-size: 9px;
+    font-weight: bold;
+    padding-right: 130px;
+    padding-bottom: 4px;
+}
+.email{
+    color: white;
+    padding-top: 20px;
+    font-size: 9px;
+    font-weight: bold;
+    padding-right: 130px;
+    padding-bottom: 4px;
+}
+.pass{
+    color: white;
+    padding-top: 25px;
+    font-size: 9px;
+    font-weight: bold;
+    padding-right: 105px;
+    padding-bottom: 4px;
+}
+.createbtn{
+    background-color: white;
+    color: #0B3153;
+    font-weight: bold;
+    padding: 9px 10px;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 2px;
+    box-shadow: 0 5px 20px black;
+}
+.createbtn:hover{
+    border: 0.8px solid #005D9C;
+    background: none;
+    color: black;
+    box-shadow: 0 5px 20px black;
+}
