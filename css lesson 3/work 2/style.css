@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to right, black,  #545454);
+}
+.cards{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: end;
+    padding-top: 130px;
+}
+.card1{
+    background-color: #FFFFFF;
+    height: 460px;
+    width: 315px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #f60101;
+}
+.card1:hover{
+    box-shadow: 0 5px 20px #cf0707;
+}
+.img1{
+    background-image: url(./image2/Screenshot\ 2026-09-06\ 185807.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 20px;
+    height: 180px;
+    width: 315px;
+    
+}
+.h1{
+    padding-top: 20px;
+
+}
+.p1{
+    color: #A5A5A5;
+    padding-top: 17px;
+}
+.button{
+    background-color: #2B96BA;
+    color: white;
+    text-decoration: none;
+    padding: 8px 100px;
+    display: inline-block;
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 7px;
+    margin-left: 6px;
+}
+.fix{
+    margin-left: 23px;
+}
+.card2{
+    background-color: #FFFFFF;
+    height: 480px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #cf0707 ;
+}
+.card2:hover{
+    box-shadow: 0 5px 20px #cf0707;
+    animation: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.img2{
+    background-image: url(./image2/Screenshot\ 2026-09-06\ 193150.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 20px;
+    height: 180px;
+    width: 315px;
+    
+}
+.h1{
+    padding-top: 20px;
+
+}
+.p1{
+    color: #A5A5A5;
+    padding-top: 17px;
+}
+.button1{
+    background-color: #2B96BA;
+    color: white;
+    text-decoration: none;
+    padding: 8px 100px;
+    display: inline-block;
+    margin-top: 60px;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 7px;
+    margin-left: 6px;
+}
+
+.fix{
+    margin-left: 23px;
+}
+.card1{
+    background-color: #FFFFFF;
+    height: 460px;
+    width: 315px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #cf0707;
+}
+
+.img3{
+    background-image: url(./image2/Screenshot\ 2026-09-06\ 193558.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 20px;
+    height: 180px;
+    width: 315px;
+    
+}
+.h1{
+    padding-top: 20px;
+
+}
+.p1{
+    color: #A5A5A5;
+    padding-top: 17px;
+}
+.button{
+    background-color: #2B96BA;
+    color: white;
+    text-decoration: none;
+    padding: 8px 100px;
+    display: inline-block;
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 7px;
+    margin-left: 6px;
+}
+.fix{
+    margin-left: 23px;
+}

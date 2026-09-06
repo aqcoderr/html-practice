@@ -1,0 +1,148 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #E5E5E5;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 150px;
+}
+.card{
+    background-color: #F4F4F4;
+    height: 435px;
+    width: 290px;
+    justify-items: center;
+    border-radius: 5px;
+    box-shadow: 0 6px 20px darkgray;
+}
+.card:hover{
+    border: 1px solid #cf0707;
+    margin: 1px;
+    box-shadow: 0 5px 20px #cf0707;
+    transition: 50ms;
+}
+.img1{
+    background-image: url(./image1/ChatGPT\ Image\ Sep\ 6\,\ 2026\,\ 05_14_40\ PM.png);
+    height: 260px;
+    width: 265px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: -25px;
+    border-radius: 5px;
+    box-shadow: 0 10px 25px black;
+}
+.about1{
+    color: #A46264;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.text{
+    font-size: 14px;
+    color: #717274;
+    padding: 10px;
+    text-align: justify;
+    word-spacing: -0.5px;
+    
+}
+.social{
+    background-image: url(./image1/ChatGPT\ Image\ Sep\ 6\,\ 2026\,\ 05_04_10\ PM.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    margin-top: -10px;
+}
+
+.card{
+    background-color: #F4F4F4;
+    height: 435px;
+    width: 290px;
+    justify-items: center;
+    border-radius: 5px;
+    box-shadow: 0 6px 20px darkgray;
+}
+.img2{
+    background-image: url(./image1/ChatGPT\ Image\ Sep\ 6\,\ 2026\,\ 05_21_24\ PM.png);
+    height: 260px;
+    width: 265px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: -25px;
+    border-radius: 5px;
+    box-shadow: 0 10px 25px black;
+}
+.about2{
+    color: #6A9371;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.text{
+    font-size: 14px;
+    color: #717274;
+    padding: 10px;
+    text-align: justify;
+    word-spacing: -0.5px;
+    
+}
+.social{
+    background-image: url(./image1/ChatGPT\ Image\ Sep\ 6\,\ 2026\,\ 05_04_10\ PM.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    margin-top: -10px;
+}
+
+.card{
+    background-color: #F4F4F4;
+    height: 435px;
+    width: 290px;
+    justify-items: center;
+    border-radius: 5px;
+    box-shadow: 0 6px 20px darkgray;
+}
+.img3{
+    background-image: url(./image1/elanor_aline_tiniqlashtirilgan.png);
+    height: 260px;
+    width: 265px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: -25px;
+    border-radius: 5px;
+    box-shadow: 0 10px 25px black;
+}
+.about3{
+    color: #5D9FA7;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.text{
+    font-size: 14px;
+    color: #717274;
+    padding: 10px;
+    text-align: justify;
+    word-spacing: -0.5px;
+    
+}
+.social{
+    background-image: url(./image1/ChatGPT\ Image\ Sep\ 6\,\ 2026\,\ 05_04_10\ PM.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    margin-top: -10px;
+}
