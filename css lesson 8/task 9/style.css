@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+body{
+    background: linear-gradient(to left, #efbfef, #a29ea2);
+}
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+.section-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 180px;
+    gap: 90px;
+}
+.img{
+    object-fit: contain;
+    border: 1px solid #494949;
+    background-color: #bdb0bf;
+    height: 440px;
+    width: 300px;
+    padding: 10px 10px;
+    box-shadow: 0px 0px 5px 5px #5a5959 ;
+    border-radius: 50px 0 ;
+    position: relative;
+}
+.img-carpet{
+    border-radius: 40px 0;
+}
+.img:hover{
+    position: relative;
+    box-shadow: 0px 0px 8px 8px #636262;
+    background-color: #bdb0bf;
+}
+.name{
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  color: #262626;
+  position: relative;
+  top: 10px;
+}
+.inform{
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #262626;
+  position: relative;
+  top: 15px;
+}
+.btn{
+    background-color: #1f1f1f;
+    padding: 10px 40px;
+    display: inline-block;
+    font-size: 24px;
+    border-radius: 37px 0;
+    position: relative;
+    top: 80px;
+    left: 2px;
+    
+}
+.imgperson{
+    object-fit: contain;
+    border: 1px solid #494949;
+    background-color: #bdb0bf;
+    height: 440px;
+    width: 300px;
+    padding: 10px 10px;
+    box-shadow: 0px 0px 5px 5px #5a5959 ;
+    position: relative;
+    top: -50px;
+    border-radius: 20px;
+}
+.img-person{
+    border-radius: 15px;
+}
+.imgperson:hover{
+   position: relative;
+   background-color: #bdb0bf;
+    box-shadow: 0px 0px 8px 8px #636262;
+}
+.imgcar{
+     object-fit: contain;
+    border: 1px solid #494949;
+    background-color: #bdb0bf;
+    height: 440px;
+    width: 300px;
+    padding: 10px 10px;
+    box-shadow: 0px 0px 5px 5px rgb(90, 89, 89) ;
+    border-radius: 0 50px  ;
+    position: relative;
+} 
+.img-car{
+    border-radius: 0 40px ;
+    filter: brightness(200%);
+}
+.imgcar:hover{
+    position: relative;
+    box-shadow: 0px 0px 8px 8px #636262;
+    background-color: #bdb0bf;
+}

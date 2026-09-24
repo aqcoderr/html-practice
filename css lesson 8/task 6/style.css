@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+.section-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 100px;
+    gap: 50px;
+}
+h1{
+    font-family: sans-serif;
+    font-size: 70px;
+    text-align: center;
+}
+.img-picture-person{
+    object-fit: cover;
+    box-shadow: 1px 3px 10px 2px black;
+    filter: blur(3px);
+}
+.img-border{
+    border: 1px solid black;
+    height: 440px;
+    width: 302px;
+    box-shadow: 1px 3px 10px 2px black;
+}
+.img-picture-nature{
+    object-fit: cover;
+    box-shadow: 1px 3px 10px 2px black;
+    filter: grayscale(100%);
+}
+.img-border-nature{
+    border: 1px solid black;
+    height: 440px;
+    width: 302px;
+    box-shadow: 1px 3px 10px 2px black;
+}
+.img-picture-car{
+     object-fit: cover;
+    box-shadow: 1px 3px 10px 2px black;
+    filter: sepia(100%);
+}
+.img-border-car{
+    border: 1px solid black;
+    height: 440px;
+    width: 302px;
+    box-shadow: 1px 3px 10px 2px black;
+}
+.img-picture-carpet{
+    object-fit: cover;
+    box-shadow: 1px 3px 10px 2px black;
+    filter: invert(100%);
+}
+.img-border-carpet{
+    border: 1px solid black;
+    height: 440px;
+    width: 302px;
+    box-shadow: 1px 3px 10px 2px black;
+}
+span{
+    font-family: sans-serif;
+    font-size: 25px;
+    filter: blur(1px);
+    position: relative;
+    top: 80px;
+    left: 50px;
+}
