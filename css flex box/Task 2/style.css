@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    width: 350px;
+    height: 260px;
+    border: none;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 200px;
+    left: 600px;
+}
+.card{
+    font-family: sans-serif;
+    font-weight: 500;
+    padding: 30px 40px;
+    color: #e7e7e7;
+    background-color: grey;
+    border-radius: 20px;
+}

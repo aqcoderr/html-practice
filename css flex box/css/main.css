@@ -1,0 +1,22 @@
+*{
+    transition: all 0.3s ease;
+}
+.nav{
+    position: relative;
+    top: 150px;
+    left: 150px;
+    border: none;
+    width: 1220px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    
+}
+.card{
+    background-color: #0E83FF;
+    padding: 19px 15px;
+    border-radius: 15px;
+}
