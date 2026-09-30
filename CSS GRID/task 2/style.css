@@ -1,0 +1,67 @@
+*{
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: x-large;
+    transition: all 0.3s ease;
+}
+.grid-container{
+    text-align: center;
+    height: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 65px 65px 65px 65px 65px;
+}
+.header{
+    border: 2px solid #121212;
+    background-color: #EFE9D7;
+    color: #0a0a0a;
+}
+.category{
+    border: 2px solid #121212;
+    grid-row: span 2;
+    background-color: #7D2826;
+    color: #efefee;
+}
+.category-big{
+    border: 2px solid #121212;
+    grid-row: span 3;
+    background-color: #7D2826;
+    color: #efefee;
+}
+.product-1{
+    border: 2px solid #121212;
+    grid-column: span 2;
+    grid-row: span 2;
+    background-color: #898861;
+    color: #efefee;
+}
+.product-2{
+    border: 2px solid #121212;
+    grid-row: span 3;
+    background-color: #898861;
+    color: #efefee;
+}
+.product-3{
+    border: 2px solid #121212;
+    grid-row: span 3;
+    background-color: #898861;
+    color: #efefee;
+}
+.product-4{
+    border: 2px solid #121212;
+    grid-row: span 3;
+    background-color: #898861;
+    color: #efefee;
+}
+.product-5{
+    border: 2px solid #121212;
+    grid-row: span 3;
+    background-color: #898861;
+    color: #efefee;
+}
+.footer{
+    border: 2px solid #121212;
+    grid-column: span 3;
+    background-color: #343323;
+    color: #efefee;
+}

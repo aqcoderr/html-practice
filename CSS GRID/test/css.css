@@ -1,0 +1,21 @@
+.grid-container{
+    width: 200px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 30px 30px;
+    gap: 10px;
+}
+.item1{
+    background-color: #c1c17f;
+    grid-column: span 2;
+}
+.item2{
+    background-color: #c1c17f;
+}
+.item3{
+    background-color: #c1c17f;
+}
+.item4{
+    background-color: #c1c17f;
+}
