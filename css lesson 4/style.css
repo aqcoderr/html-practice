@@ -4,6 +4,7 @@
     box-sizing: border-box;
    list-style: none;
    text-decoration: none;
+   transition: all 0.3s ease;
 }
 .container{
    max-width: 1000px;
@@ -501,6 +502,11 @@ hr{
    position: relative;
    color: #F6F6F6;
    top: 90px;
+}
+.br:hover{
+   background-color: #6d2615;
+   transition: 300ms;
+   box-shadow: 0 4px 10px #792c19;
 }
 .span{
    color: #F6F6F6;

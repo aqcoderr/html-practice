@@ -20,5 +20,5 @@ h1{
     filter: saturate(200%);
 }
 .car{
-    filter: saturate(10%);
+    filter: saturate(1%);
 }

@@ -17,5 +17,8 @@ h1{
     left: 430px;
 }
 .gil{
-    filter: contrast(50%);
+    filter: contrast(120%);
+}
+.gil3{
+    filter: contrast(30%);
 }
