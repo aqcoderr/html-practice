@@ -1,3 +1,8 @@
+// Hosting
+console.log(findage(1994));
+
+
+
 // 1-vazifa
 function ismfamilya(name) {
     console.log("Salom men", name);
@@ -61,10 +66,23 @@ console.log(umumiynatija);
 function chegirma(narx) {
 
     if (narx >= 500000) {
-        return narx = narx - narx * 10 / 100;
+        return narx - narx * 10 / 100;
     }else{
         return narx;
     }
 }
 const chegirmahisobla = chegirma(800000);
 console.log(chegirmahisobla);
+
+// 7-vazifa
+function findage(birthyear, nowyear = 2026) {
+    const yosh = nowyear - birthyear;
+    if (yosh >= 18) {
+        return 'Siz kirishingiz mumkin. Yoshingiz:' + ' ' + yosh + ' ' + 'yosh';
+    }else{
+        return 'Siz kirishingiz mumkin emas. Yoshingiz:' + ' ' + yosh + ' ' + 'yosh';
+    }
+}
+const yosh = findage(2008);
+console.log(yosh);
+ismfamilya("Islomman");
