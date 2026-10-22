@@ -14,10 +14,10 @@ console.log(test);
 const fruits = ["olma", "banan", "uzum", "behi"];
 
 console.log(fruits.length);
-console.log(fruits.at(-2));
+console.log(fruits.at(-1));
 console.log(fruits.includes('banan'));
 
-let result = fruits.slice(0, 2);
+let result = fruits.slice(0, 1);
 console.log(result);
 console.log(fruits);
 
@@ -43,3 +43,69 @@ const results = numbers.map(numbers => {
 console.log(results);
 
 // Filter
+const ages = [54, 23, 12, 11, 32, 6, 28];
+let adults = ages.filter(age => age >= 18);
+console.log(adults);
+
+// find
+const nums = [54, 23, 11, 11, 32, 6, 28];
+let numresult = nums.find(num => num >= 18);
+console.log(numresult);
+
+// findIndex
+let numresultindex = nums.findIndex(num => num >= 18);
+console.log(numresultindex);
+
+// some
+const numsome = [54, 23, 12, 11, 32, 6, 28];
+let someresult = numsome.some(some => some >= 18);
+console.log(someresult);
+
+// every
+const numevery = [54, 23, 11, 11, 32, 6, 28];
+let everyresult = numevery.every(some => some >= 18);
+console.log(everyresult);
+
+// reduce
+let total = nums.reduce((sum, n) =>{
+    return sum + n;
+}, 0);
+console.log(total);
+
+// sort()
+let sortnums = [76, 44, 31, 0.01, 98, 11, 1, 0];
+
+sortnums.sort((a, b) => a - b);
+console.log(sortnums);
+
+// toSorted()
+let sortednums = [36, 84, 3, 0.01, 18, 91, 4, 0];
+
+let sortednumsresult = sortednums.toSorted((a, b) => a - b);
+
+console.log(sortednumsresult);
+console.log(sortednums);
+
+//reverse()
+let reverse = [56, 24, 3, 0, 0.01, 18, 91, 4];
+reverse.reverse();
+console.log(reverse);
+
+// toReversed()
+let toreversed = [18, 91, 4, 56, 24, 3, 0, 0.01];
+const reversed = toreversed.toReversed();
+console.log(toreversed);
+console.log(reversed);
+
+// flat
+let flat = [12, 43, [10, 54,[11, 91, 1], 34], 86, 19,];
+console.log(flat.flat(Infinity));
+
+// flatMap
+const flatmap = [1, 2, 3];
+
+const resultflat = flatmap.flatMap(n => [n, n * 4]);
+
+console.log(resultflat);
+
+
