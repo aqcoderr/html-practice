@@ -49,8 +49,40 @@ for (const text of texts) {
     console.log(text);
 }
 
-const products = [{ name: "Daftar", price: 8000 }, { name: "Ruchka", price: 3000 }, { name: "Kitob", price: 25000 }];
+const products = [
+    { name: "Daftar", price: 8000 }, 
+    { name: "Ruchka", price: 3000 }, 
+    { name: "Kitob", price: 25000 }
+];
+
+let total = 0;
+
 for (const product of products) {
     console.log(product);
+    total = total + product.price;
 }
-console.log("Total price of products: " ,36000,"so'm");
+console.log("Total price of products:", total, "so'm");
+let all = Object.entries(products)
+console.log(all);
+
+
+
+
+let students = {
+name: "Sardor",
+age: 20,
+email: "sardor@gmail.com",
+group: "front-end",
+hobby: "football"
+}
+// OBJECT OPERATSIYALAR
+
+let keys = Object.keys(students) // object keylarni array ichiga solib qaytaradi
+console.log(keys);
+
+let qiymatlar = Object.values(students) // object qiymatlarini array ichiga solib beradi
+console.log(qiymatlar);
+
+let both = Object.entries(students) // object keys va values ni array ichiga solib qaytaradi
+
+console.log(both);
