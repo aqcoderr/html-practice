@@ -18,3 +18,39 @@ while (a <= 100) {
   a++;
 }
 console.log(sum);
+
+//for in and for of
+const book = { title: "Alpomish", year: 2020, pages: 180 }
+for (const key in book) {
+    console.log(key);
+}
+
+const phone = { brand: "Samsung", model: "A55", price: 400 }
+for (const tel in phone) {
+    console.log(tel, phone [tel]);
+}
+
+const animals = ["mushuk", "it", "quyon", "ot"]
+for (const animal of animals) {
+    console.log(animal);
+}
+
+const numbers = [12, 5, 8, 10, 3]
+
+let sum3 = 0;
+for (const number of numbers) {
+    sum3 += number;
+}
+console.log(sum3);
+
+let texts = "JAVASCRIPT";
+
+for (const text of texts) {
+    console.log(text);
+}
+
+const products = [{ name: "Daftar", price: 8000 }, { name: "Ruchka", price: 3000 }, { name: "Kitob", price: 25000 }];
+for (const product of products) {
+    console.log(product);
+}
+console.log("Total price of products: " ,36000,"so'm");
