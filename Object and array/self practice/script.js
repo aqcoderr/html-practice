@@ -48,12 +48,12 @@ let adults = ages.filter(age => age >= 18);
 console.log(adults);
 
 // find
-const nums = [54, 23, 11, 11, 32, 6, 28];
-let numresult = nums.find(num => num >= 18);
+const nums = [4, 23, 11, 11, 32, 6, 28];
+let numresult = nums.find(num => num <= 18);
 console.log(numresult);
 
 // findIndex
-let numresultindex = nums.findIndex(num => num >= 18);
+let numresultindex = nums.findIndex(num => num >= 8);
 console.log(numresultindex);
 
 // some
@@ -108,4 +108,50 @@ const resultflat = flatmap.flatMap(n => [n, n * 4]);
 
 console.log(resultflat);
 
+// join
+const fruitsj = ["olma", "banan", "uzum"];
 
+console.log(fruitsj.join());
+
+
+console.log(fruitsj.join(" - "));
+
+// toString
+const numbersts = [10, 20, 30];
+
+console.log(numbersts.toString());
+
+// is array
+console.log(Array.isArray([1, 2, 3]));
+
+// Array from
+const numbersaf = Array.from("HELLO JAVASCRIPT")
+console.log(numbersaf);
+
+// Array of
+const numbersao = Array.of(10, 90, 43);
+console.log(numbersao);
+
+// Array
+console.log(Array(5));
+
+// Fill
+let numfill = [1, 2, 3, 4, 5];
+const numfillresult = numfill.fill("Salom", 1, 3);
+console.log(numfillresult);
+
+// copyWithin
+const numberscw = [1, 2, 3, 4, 5];
+
+numberscw.copyWithin(0, 1, 4);
+console.log(numberscw);
+
+// with
+const numbersw = [10, 20, 30];
+
+const newNumbers = numbersw.with(1, 99);
+
+console.log(newNumbers);
+// [10, 99, 30]
+
+console.log(numbersw);
