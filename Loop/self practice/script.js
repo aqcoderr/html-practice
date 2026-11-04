@@ -36,3 +36,7 @@ while (i >= 1 && i <= 20) {
     i--;
 }
 console.log(sum2);
+
+
+
+

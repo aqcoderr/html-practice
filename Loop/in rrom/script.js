@@ -77,7 +77,7 @@ hobby: "football"
 }
 // OBJECT OPERATSIYALAR
 
-let keys = Object.keys(students) // object keylarni array ichiga solib qaytaradi
+let keys = Object.keys(students); // object keylarni array ichiga solib qaytaradi
 console.log(keys);
 
 let qiymatlar = Object.values(students) // object qiymatlarini array ichiga solib beradi
