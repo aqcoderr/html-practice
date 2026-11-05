@@ -19,7 +19,7 @@ console.log(cannameresult);
 // toFixed
 let price = 125.5970;
 
-console.log(price.toFixed(2));
+console.log(price.toFixed(1));
 
 // number
 let age = "18";
@@ -46,7 +46,7 @@ console.log(Number.isInteger(23));
 console.log(Number.isInteger(2.3));
 
 // mathRound Sonni eng yaqin butun songa yaxlitlaydi.
-console.log(Math.round(4.4)); // 4
+console.log(Math.round( 4.4)); // 4
 console.log(Math.round(4.7)); // 5
 
 // floor
@@ -153,3 +153,38 @@ function bye() {
 }
 bye("Alisher", bye)
 
+// continue and nasted loops
+for (let i = 1; i <= 10; i++) {
+    if (i === 3) {
+        continue;
+    }
+    console.log(i);
+}
+
+for (let j = 1; j <= 20; j++) {
+    if (j % 5 === 0) {
+        continue;
+    }
+    console.log(j);
+}
+
+
+for (let a = 1; a <= 5; a++){
+   let stars = "";
+
+   for (let b = 1; b <= a; b++) {
+    stars += "*"
+   }
+   console.log(stars);
+   
+}
+
+for (let i = 1; i <= 5; i++) {
+
+    for (let j = 1; j <= 5; j++) {
+
+        console.log(`${i} x ${j} = ${i * j}`);
+        
+
+    }
+}
