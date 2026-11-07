@@ -22,7 +22,7 @@ console.log(yigindinatijasi);
 // 3-vazifa
 function toqyokijuft(raqam) {
     if (raqam % 2 === 0) {
-        return "Juft son";
+        return "Juft son";   
     }else{
         return "Toq son";
     }
@@ -85,4 +85,14 @@ function findage(birthyear, nowyear = 2026) {
 }
 const yosh = findage(2008);
 console.log(yosh);
-ismfamilya("Islomman");
+
+function findyear(myage, nowyear = 2026) {
+    const myyear = nowyear - myage;
+    if (myyear <= 2008) {
+        return "siz" + ' ' + myyear + "-yilsiz"
+    }else{
+        return "Sizga mumkin emas chunki siz" + ' ' + myyear + "-yilsiz"
+    }
+}
+const myyear = findyear(9)
+console.log(myyear);
