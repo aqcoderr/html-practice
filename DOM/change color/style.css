@@ -1,0 +1,22 @@
+*{
+    font-family: sans-serif;
+}
+select{
+    width: 100%;
+    height: 50px;
+    background-color: #03033974;
+    backdrop-filter: blur(15px);
+    color: rgb(247, 233, 233);
+    font-size: 24px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 3px 20px rgb(38, 37, 37);
+    
+}
+option{
+    border-radius: 20px;
+}
+p{
+    color: #f0f8ff;
+    font-size: 20px;
+}
