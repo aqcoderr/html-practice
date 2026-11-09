@@ -30,7 +30,7 @@ const results = prices.map(numbers => {
 })
 console.log(results);
 
-let w = prices.filter(score => score >= 20000);
+let w = results.filter(score => score >= 20000);
 console.log(w);
 
 const totalprice = prices.reduce((sum, price) => sum + price, 0);
@@ -68,3 +68,136 @@ console.log(yosh);
 console.log(studentsobj.map(map => map.name));
 
 console.log(studentsobj.every(check => check.score > 50));
+
+// array destructuring
+
+const numbers = [10, 20, 30, 40];
+
+const [first, , third] = numbers; // vergul 1ta element ni tashlab ketadi
+
+console.log(first);
+console.log(third);
+
+
+const user = {
+    name: "Alisher"
+};
+
+const { name, age = 18 } = user;
+
+console.log(name);
+console.log(age);
+
+
+
+const user1 = {
+    name: "Alisher",
+    email: "ali@gmail.com"
+};
+
+const { name: userName, email: userEmail } = user1;  //bu obyektning property nomini o‘zgartirmaydi, faqat qiymatni boshqa nomli o‘zgaruvchiga oladi.
+
+console.log(userName);
+console.log(userEmail);
+
+
+const user2 = {
+    name2: "Alisher",
+    age: 18,
+
+    address: {
+        city2: "Andijan",
+        country2: "Uzbekistan"
+    }
+};
+// oddiy usul
+// const city2 = user2.address.city2;
+// const country2 = user2.address.country2;
+
+// nested destructuring
+const { name2, address: { city2, country2 } } = user2;
+
+console.log(name2);
+console.log(city2);
+console.log(country2);
+
+
+
+function total(...numbers) {
+    let sum = 0;
+
+    for (const number of numbers) {
+        sum += number;
+    }
+
+    console.log(sum);
+}
+
+total(10, 20, 30, 40);
+
+
+// object assign
+const user3 = {
+    name: "Alisher"
+};
+
+const extra = {
+    age: 18,
+    job: "Developer"
+};
+
+Object.assign(user3, extra);
+
+console.log(user3);
+
+// Object.freeze
+const user4 = {
+    name: "Alisher",
+    age: 18
+};
+
+Object.freeze(user4);
+
+user4.age = 20;
+user4.city = "Andijan";
+
+delete user4.name;
+
+console.log(user4);
+
+// Object.seal    faqat qiymatni o'zgartirish mumikn.
+const user5 = {
+    name: "Alisher",
+    age: 18
+};
+
+Object.seal(user5);
+
+user5.age = 25; // Mumkin
+
+user5.city = "Andijan"; // Mumkin emas
+
+delete user5.name; // Mumkin emas
+
+console.log(user5);
+
+
+const user6 = {
+  ism: "Alisher",
+  inform: {
+    car:"BMW"
+  }
+};
+
+if (Object.hasOwn(user6, "ism")) {
+  console.log("Ism yuborilgan");
+}else{
+  console.log("Ism yuborilmagan");
+}
+
+// propertyni hafsiz tekshirish
+const city = user.address?.city ?? "Ma'lumot yo'q";    // ?? Nullish coalsing
+
+console.log(city);
+
+console.log("car" in user6.inform );

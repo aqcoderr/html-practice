@@ -21,6 +21,9 @@ console.log(mehmonlar.includes("Madina"));
 // 3-vazifa
 let oquvchilar = ["Aziza", "Jasur", "Kamola", "Bekzod"];
 
+console.log(oquvchilar);
+
+
 console.log("Jasurning indexsi", oquvchilar.indexOf("Jasur"));
 
 console.log("3-indexdagi element", oquvchilar[3]);

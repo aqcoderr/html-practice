@@ -118,11 +118,34 @@ console.log(calculate(10, 5, "/"));
 console.log(calculate(10, 0, "/"));
 console.log(calculate(10, 50, "*"));
 
+function hisobla(q, w, amal) {
+    switch (amal) {
+        case "/":
+            if (w === 0) {
+                return "0 ga bo'lib bo'lmaydi"
+            }
+            return q / w;
+        case "*":
+            return q * w;
+        case "+":
+            return q + w;
+        case "-":
+            return q - w;
+        default:
+            return "Mavjud bo'lmagan amal";
+    }
+}
+console.log(hisobla(50, 10, "*"));
+console.log(hisobla(50, 10, "/"));
+console.log(hisobla(50, 10, "+"));
+console.log(hisobla(50, 10, "-"));
+console.log(hisobla(50, 0, "/"));
 
-const hisobla = (number) => {
+
+const hisoblan = (number) => {
     return number * number;
 }
-console.log(hisobla(12));
+console.log(hisoblan(12));
 
 
 const great = (a, b) => {
@@ -162,4 +185,3 @@ const all = [...cars, ...uzbcars];
 all.unshift("dodge");
 all.push("malibu 2")
 console.log(all);
-

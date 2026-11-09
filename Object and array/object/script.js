@@ -3,8 +3,11 @@ const user = {
 name: "Ali",
 surname: "Valiyev",
 age: 20,
-email: "new@mail.com"
+email: "alisher@mail.com"
 };
+console.log(user);
+
+
 const {name, surname} = user;
 console.log(name, surname);
 
@@ -13,6 +16,7 @@ console.log(age);
 
 const {email = "new@gmail.com"} = user;
 console.log(email);
+console.log(user);
 
 
 // 2-vazifa
