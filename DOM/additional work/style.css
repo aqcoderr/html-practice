@@ -1,0 +1,46 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+body{
+    background-color: #421b14ef;
+}
+.cards-content{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+.card{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.625rem;
+    border-radius: 20px;
+    background-color: #6e1708a1;
+    color: #ffffffee;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.482);
+    backdrop-filter: blur(20px);
+    filter: contrast(130%);
+}
+img{
+    width: 205px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    filter: brightness(130%);
+}
+button{
+    border: none;
+    background-color: #3d0a0aba;
+    color: #ffffffee;
+    padding: 0.625rem;
+    border-radius: 50px;
+}
+#plus{
+    width: 36px;
+}
+#minus{
+    width: 36px;
+}
+#count{
+    width: 36px;
+}
